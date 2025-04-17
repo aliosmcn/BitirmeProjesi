@@ -1,13 +1,14 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Table : MonoBehaviour
 {
-    public GameObject itemPrefab;
+    public GameObject currentItem;
 
     public void PlaceObject(GameObject objectToPlace)
     {
-        itemPrefab = objectToPlace;
-        itemPrefab.transform.position = this.transform.position + Vector3.up * 0.4f;
+        currentItem = objectToPlace;
+        currentItem.transform.position = this.transform.position + Vector3.up * 0.4f;
     }
     
 }

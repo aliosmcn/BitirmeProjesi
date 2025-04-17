@@ -7,116 +7,110 @@ public class InteractSystem : MonoBehaviour
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Transform holdPoint;
 
-    [Header("HandleObject")]
-    public GameObject carriedObject;
-    private bool isCarrying = false;
-    
-    private GameObject lastOutline;
+    private Camera cam;
+    private GameObject carriedObject;
+    private Interactable currentOutline;
+
+    private void Awake()
+    {
+        cam = Camera.main;
+    }
 
     private void Update()
     {
-        HandleInteraction();
+        bool hasHit = Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance, interactableLayer);
+        UpdateOutline(hasHit, hit);
+
+        if (Input.GetKeyDown(KeyCode.E))
+            HandleInteraction(hasHit, hit);
     }
 
-    private void HandleInteraction()
+    
+    private void HandleInteraction(bool hasHit, RaycastHit hit)
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (!carriedObject)
         {
-            if(!isCarrying)
-            {
-                TryPickup();
-            }
+            if (!hasHit) return;
+
+            if (hit.collider.CompareTag("item"))
+                Pickup(hit.collider.gameObject);
+            else if (hit.collider.TryGetComponent(out Table table))
+                Pickup(table.currentItem);
+        }
+        else
+        {
+            if (hasHit && hit.collider.TryGetComponent(out Table table))
+                PlaceOnTable(table);
             else
-            {
-                TryPlace();
-            }
+                Drop();
         }
     }
 
-    private void TryPickup()
+    private void Pickup(GameObject obj)
     {
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, 
-            out RaycastHit hit, interactDistance, interactableLayer))
-        {
-            //OUTLINE
-            if (hit.collider.TryGetComponent(out Interactable interactable))
-            {
-                lastOutline = hit.collider.gameObject;
-                interactable.Highlight(true);
-            }
-            else if (lastOutline != null)
-            {
-                interactable.Highlight(false);
-                lastOutline = null;
-            }
-            
-            //DIREKT
-            if (hit.collider.gameObject.CompareTag("item"))
-            {
-                CarryObject(hit.collider.gameObject);
-            }
-            
-            //MASADAN
-            if(hit.collider.TryGetComponent(out Table table))
-            {
-                carriedObject = table.itemPrefab;
-            }
-            
-            //KASADAN
-            /*
-            if (hit.collider.gameObject.CompareTag("Kasa"))
-            {
-                //kasadan ürün al
-            }*/
-        }
+        carriedObject = obj;
+        carriedObject.TryGetComponent(out Collider coll); 
+        coll.enabled = true;
+        if (carriedObject.TryGetComponent(out Rigidbody rb))
+            rb.isKinematic = true;
+
+        carriedObject.transform.SetParent(holdPoint);
+        carriedObject.transform.localPosition = Vector3.zero;
+        carriedObject.transform.localRotation = Quaternion.identity;
     }
 
-    private void TryPlace()
+    private void PlaceOnTable(Table table)
     {
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, 
-            out RaycastHit hit, interactDistance, interactableLayer))
+        carriedObject.transform.SetParent(table.transform, worldPositionStays: true);
+        carriedObject.TryGetComponent(out Collider coll); 
+        coll.enabled = false;
+        table.PlaceObject(carriedObject);
+        ResetCarry();
+    }
+
+    private void Drop()
+    {
+        carriedObject.transform.SetParent(null);
+        if (carriedObject.TryGetComponent(out Rigidbody rb))
+            rb.isKinematic = false;
+
+        ResetCarry();
+    }
+
+    private void ResetCarry()
+    {
+        carriedObject.transform.rotation = Quaternion.identity;
+        carriedObject = null;
+    }
+
+    #region Outline
+
+    private void UpdateOutline(bool hasHit, RaycastHit hit)
+    {
+        if (hasHit && hit.collider.TryGetComponent<Interactable>(out var interactable))
         {
-            if(hit.collider.GetComponent<Table>())
+            if (currentOutline != interactable)
             {
-                PlaceOnTable(hit.transform);
+                currentOutline = interactable;
+                currentOutline.Highlight(true);
             }
         }
         else
         {
-            DropObject();
+            ClearOutline();
+        }
+    }
+    private void ClearOutline()
+    {
+        if (currentOutline)
+        {
+            currentOutline.Highlight(false);
+            currentOutline = null;
         }
     }
 
-    private void CarryObject(GameObject obj)
-    {
-        carriedObject = obj;
-        obj.GetComponent<Rigidbody>().isKinematic = true;
-        obj.transform.SetParent(holdPoint);
-        obj.transform.localPosition = Vector3.zero;
-        obj.transform.localRotation = Quaternion.identity;
-        isCarrying = true;
-    }
+    #endregion
+    
 
-    private void PlaceOnTable(Transform table)
-    {
-        carriedObject.transform.SetParent(table);
-        table.TryGetComponent(out Table table2);
-        table2.PlaceObject(carriedObject);
-        ResetObject();
-    }
-
-    private void DropObject()
-    {
-        carriedObject.transform.SetParent(null);
-        carriedObject.GetComponent<Rigidbody>().isKinematic = false;
-        ResetObject();
-    }
-
-
-    private void ResetObject()
-    {
-        carriedObject.transform.localRotation = Quaternion.identity;
-        carriedObject = null;
-        isCarrying = false;
-    }
+    
 }
