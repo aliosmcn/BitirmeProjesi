@@ -10,6 +10,8 @@ public class InteractSystem : MonoBehaviour
     [Header("HandleObject")]
     public GameObject carriedObject;
     private bool isCarrying = false;
+    
+    private GameObject lastOutline;
 
     private void Update()
     {
@@ -36,6 +38,18 @@ public class InteractSystem : MonoBehaviour
         if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, 
             out RaycastHit hit, interactDistance, interactableLayer))
         {
+            //OUTLINE
+            if (hit.collider.TryGetComponent(out Interactable interactable))
+            {
+                lastOutline = hit.collider.gameObject;
+                interactable.Highlight(true);
+            }
+            else if (lastOutline != null)
+            {
+                interactable.Highlight(false);
+                lastOutline = null;
+            }
+            
             //DIREKT
             if (hit.collider.gameObject.CompareTag("item"))
             {
