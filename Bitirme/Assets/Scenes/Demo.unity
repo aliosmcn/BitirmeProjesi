@@ -537,6 +537,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a05dbe3aa2bd96149a8997ab90bc3bdf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 662385457}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a05dbe3aa2bd96149a8997ab90bc3bdf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 662385462}
   m_SourcePrefab: {fileID: 100100000, guid: a05dbe3aa2bd96149a8997ab90bc3bdf, type: 3}
 --- !u!1 &410087039
 GameObject:
@@ -698,6 +701,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0065802, y: 0.40571153, z: 1.0408005}
   m_Center: {x: -0.000000059604645, y: 0.20285574, z: 0.01711005}
+--- !u!114 &662385462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662385456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.92176676, g: 0, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &690889998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 70883066113cc8240954a1e34ac4f01b, type: 3}
@@ -935,7 +956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6ebe38be5376147a579d7eab24d69b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 2
+  interactDistance: 2.2
   interactableLayer:
     serializedVersion: 2
     m_Bits: 384
@@ -954,10 +975,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpForce: 7
+  jumpForce: 1
   gravity: -15
   groundCheck: {fileID: 1051694701}
-  groundDistance: 1
+  groundDistance: 1.2
   groundMask:
     serializedVersion: 2
     m_Bits: 64
