@@ -9,6 +9,10 @@ public class Table : MonoBehaviour
     {
         currentItem = objectToPlace;
         currentItem.transform.position = this.transform.position + Vector3.up * 0.4f;
+        
+        currentItem.TryGetComponent(out Interactable interactable);
+        interactable.previewObject.SetActive(false);
+        interactable.Highlight(false);
     }
     
 }

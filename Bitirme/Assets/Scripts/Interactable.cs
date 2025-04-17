@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    public GameObject previewObject;
+    
     private Canvas ui;
     private Outline outline;
-
+    
     private void Start()
     {
         ui = GetComponentInChildren<Canvas>();
@@ -18,6 +20,16 @@ public class Interactable : MonoBehaviour
     {
         outline.enabled = state;
         ui.enabled = state;
+    }
+
+    public void ShowPreview(RaycastHit hit, bool state)
+    {
+        if (gameObject.CompareTag("item"))
+        {
+            previewObject.transform.position = hit.point;
+            previewObject.transform.rotation = Quaternion.identity;
+            previewObject.SetActive(state);
+        }
     }
 
 }

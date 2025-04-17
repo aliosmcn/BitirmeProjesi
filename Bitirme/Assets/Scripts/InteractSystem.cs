@@ -3,7 +3,7 @@ using UnityEngine;
 public class InteractSystem : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float interactDistance = 2f;
+    [SerializeField] private float interactDistance = 2.2f;
     [SerializeField] private LayerMask interactableLayer;
     [SerializeField] private Transform holdPoint;
 
@@ -20,6 +20,7 @@ public class InteractSystem : MonoBehaviour
     {
         bool hasHit = Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance, interactableLayer);
         UpdateOutline(hasHit, hit);
+        ObjectPreview(hasHit, hit);
 
         if (Input.GetKeyDown(KeyCode.E))
             HandleInteraction(hasHit, hit);
@@ -53,7 +54,8 @@ public class InteractSystem : MonoBehaviour
         coll.enabled = true;
         if (carriedObject.TryGetComponent(out Rigidbody rb))
             rb.isKinematic = true;
-
+        carriedObject.TryGetComponent(out Interactable interactable); 
+            interactable.Highlight(false);
         carriedObject.transform.SetParent(holdPoint);
         carriedObject.transform.localPosition = Vector3.zero;
         carriedObject.transform.localRotation = Quaternion.identity;
@@ -110,8 +112,18 @@ public class InteractSystem : MonoBehaviour
     }
 
     #endregion
-    
-    private void 
 
-    
+    private void ObjectPreview(bool hasHit, RaycastHit hit)
+    {
+        if (hasHit && carriedObject)
+        {
+            carriedObject.TryGetComponent(out Interactable interactable);
+            interactable.ShowPreview(hit,true);
+        }
+        else if (!hasHit && carriedObject)
+        {
+            carriedObject.TryGetComponent(out Interactable interactable);
+            interactable.ShowPreview(hit,false);
+        }
+    }
 }

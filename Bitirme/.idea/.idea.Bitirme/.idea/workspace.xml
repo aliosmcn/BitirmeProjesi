@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/deneme.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/deneme.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/denemem.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/denemem.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/DomatesHam/dom.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/DomatesHam/dom.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Table.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Table.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +99,7 @@
       <updated>1744874232062</updated>
       <workItem from="1744874234964" duration="3000" />
       <workItem from="1744885820792" duration="5151000" />
-      <workItem from="1744897350129" duration="7885000" />
+      <workItem from="1744897350129" duration="12031000" />
     </task>
     <servers />
   </component>
