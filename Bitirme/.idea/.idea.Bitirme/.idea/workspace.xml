@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Readme.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineFill.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineFill.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineMask.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineMask.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineFill.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineFill.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineMask.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineMask.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials/Plane.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials/Plane.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Scenes/QuickOutline.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Scenes/QuickOutline.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744874232062</updated>
       <workItem from="1744874234964" duration="3000" />
-      <workItem from="1744885820792" duration="3605000" />
+      <workItem from="1744885820792" duration="4396000" />
     </task>
     <servers />
   </component>
