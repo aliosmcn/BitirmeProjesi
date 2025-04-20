@@ -1,129 +1,146 @@
 using UnityEngine;
+using System.Collections;
+using Unity.Mathematics;
 
 public class InteractSystem : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float interactDistance = 2.2f;
-    [SerializeField] private LayerMask interactableLayer;
+    [SerializeField] private float rayDistance = 2.2f;
     [SerializeField] private Transform holdPoint;
+    [SerializeField] private float moveTime = 0.2f;
+    [SerializeField] private LayerMask interactableLayer; // Added layer mask for more efficient raycasting
 
     private Camera cam;
-    private GameObject carriedObject;
-    private Interactable currentOutline;
+    private Interactable currentHover;
+    private Interactable holdObject;
+    private Coroutine currentRoutine; 
 
-    private void Awake()
+    void Awake() => cam = Camera.main;
+
+    void Update()
     {
-        cam = Camera.main;
+        HandleRaycast();
+        HandleInput();
     }
 
-    private void Update()
+    private void HandleRaycast()
     {
-        bool hasHit = Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, interactDistance, interactableLayer);
-        UpdateOutline(hasHit, hit);
-        ObjectPreview(hasHit, hit);
+        if (currentRoutine != null) return;
 
-        if (Input.GetKeyDown(KeyCode.E))
-            HandleInteraction(hasHit, hit);
-    }
-
-    
-    private void HandleInteraction(bool hasHit, RaycastHit hit)
-    {
-        if (!carriedObject)
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, 
+                           rayDistance, interactableLayer))
         {
-            if (!hasHit) return;
+            hit.collider.TryGetComponent(out Interactable hover);
+            
+            if (hover != currentHover)
+            {
+                if (currentHover) currentHover.OutlineCanvasState(false);
+                currentHover = hover;
+                if (currentHover) currentHover.OutlineCanvasState(true);
+            }
 
-            if (hit.collider.CompareTag("item"))
-                Pickup(hit.collider.gameObject);
-            else if (hit.collider.TryGetComponent(out Table table))
-                Pickup(table.currentItem);
+            if (holdObject) holdObject.ShowPreview(hit.point);
         }
         else
         {
-            if (hasHit && hit.collider.TryGetComponent(out Table table))
-                PlaceOnTable(table);
+            if (currentHover)
+            {
+                currentHover.OutlineCanvasState(false);
+                currentHover = null;
+            }
+            
+            if (holdObject) holdObject.HidePreview();
+        }
+    }
+
+    private void HandleInput()
+    {
+        if (!Input.GetKeyDown(KeyCode.E)) return;
+
+        if (currentRoutine != null) return;
+
+        if (holdObject)
+        {
+            holdObject.HidePreview();
+            
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
+                currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, hit.point, false));  //PLACE
             else
                 Drop();
         }
-    }
-
-    private void Pickup(GameObject obj)
-    {
-        carriedObject = obj;
-        carriedObject.TryGetComponent(out Collider coll); 
-        coll.enabled = true;
-        if (carriedObject.TryGetComponent(out Rigidbody rb))
-            rb.isKinematic = true;
-        carriedObject.TryGetComponent(out Interactable interactable); 
-            interactable.Highlight(false);
-        carriedObject.transform.SetParent(holdPoint);
-        carriedObject.transform.localPosition = Vector3.zero;
-        carriedObject.transform.localRotation = Quaternion.identity;
-    }
-
-    private void PlaceOnTable(Table table)
-    {
-        carriedObject.transform.SetParent(table.transform, worldPositionStays: true);
-        carriedObject.TryGetComponent(out Collider coll); 
-        coll.enabled = false;
-        table.PlaceObject(carriedObject);
-        ResetCarry();
-    }
-
-    private void Drop()
-    {
-        carriedObject.transform.SetParent(null);
-        if (carriedObject.TryGetComponent(out Rigidbody rb))
-            rb.isKinematic = false;
-
-        ResetCarry();
-    }
-
-    private void ResetCarry()
-    {
-        carriedObject.transform.rotation = Quaternion.identity;
-        carriedObject = null;
-    }
-
-    #region Outline
-
-    private void UpdateOutline(bool hasHit, RaycastHit hit)
-    {
-        if (hasHit && hit.collider.TryGetComponent<Interactable>(out var interactable))
+        else if (currentHover)
         {
-            if (currentOutline != interactable)
-            {
-                currentOutline = interactable;
-                currentOutline.Highlight(true);
-            }
+            currentRoutine = StartCoroutine(MoveObjectRoutine(currentHover, holdPoint.position, true)); //PICK
+        }
+    }
+
+    //Smooth Pick / Place
+    private IEnumerator MoveObjectRoutine(Interactable obj, Vector3 targetPos, bool pickup)
+    {
+        if (currentHover) currentHover.OutlineCanvasState(false);
+        obj.HidePreview();
+        
+        SetPhysicsState(obj, false);
+        
+        Vector3 startPos = obj.transform.position;
+        Quaternion startRot = obj.transform.rotation;
+        Quaternion targetRot = pickup ? holdPoint.rotation : Quaternion.identity;
+        
+        if (!pickup) 
+            obj.transform.SetParent(null);
+            
+        float t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime / moveTime;
+            float easedT = Mathf.SmoothStep(0, 1, Mathf.Clamp01(t));
+            
+            obj.transform.position = Vector3.Lerp(startPos, targetPos, easedT);
+            obj.transform.rotation = Quaternion.Slerp(startRot, targetRot, easedT);
+            yield return null;
+        }
+
+        obj.transform.position = targetPos;
+        obj.transform.rotation = targetRot;
+        
+        if (pickup)
+        {
+            obj.transform.SetParent(holdPoint);
+            obj.transform.localPosition = Vector3.zero;
+            obj.transform.localRotation = Quaternion.identity;
+            holdObject = obj;
         }
         else
         {
-            ClearOutline();
+            SetPhysicsState(obj, true);
+            holdObject = null;
         }
-    }
-    private void ClearOutline()
-    {
-        if (currentOutline)
-        {
-            currentOutline.Highlight(false);
-            currentOutline = null;
-        }
+        
+        currentRoutine = null;
     }
 
-    #endregion
-
-    private void ObjectPreview(bool hasHit, RaycastHit hit)
+    //Drop
+    private void Drop()
     {
-        if (hasHit && carriedObject)
-        {
-            carriedObject.TryGetComponent(out Interactable interactable);
-            interactable.ShowPreview(hit,true);
-        }
-        else if (!hasHit && carriedObject)
-        {
-            carriedObject.TryGetComponent(out Interactable interactable);
-            interactable.ShowPreview(hit,false);
-        }
+        holdObject.transform.SetParent(null);
+        holdObject.transform.rotation = Quaternion.identity;
+        SetPhysicsState(holdObject, true);
+        holdObject.HidePreview();
+        holdObject = null;
+    }
+    
+    //HoldObject Fizikleri
+    private void SetPhysicsState(Interactable obj, bool state)
+    {
+        if (obj.TryGetComponent(out Collider c)) c.enabled = state;
+        if (obj.TryGetComponent(out Rigidbody r)) r.isKinematic = !state;
+    }
+    
+    //YOK OLURSA
+    private void OnDisable()
+    {
+        if (currentHover) currentHover.OutlineCanvasState(false);
+        if (holdObject) Drop();
+        if (currentRoutine != null) StopCoroutine(currentRoutine);
     }
 }

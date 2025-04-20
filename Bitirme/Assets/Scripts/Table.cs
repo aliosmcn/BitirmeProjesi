@@ -3,16 +3,6 @@ using UnityEngine.Serialization;
 
 public class Table : MonoBehaviour
 {
-    public GameObject currentItem;
-
-    public void PlaceObject(GameObject objectToPlace)
-    {
-        currentItem = objectToPlace;
-        currentItem.transform.position = this.transform.position + Vector3.up * 0.4f;
-        
-        currentItem.TryGetComponent(out Interactable interactable);
-        interactable.previewObject.SetActive(false);
-        interactable.Highlight(false);
-    }
+    
     
 }

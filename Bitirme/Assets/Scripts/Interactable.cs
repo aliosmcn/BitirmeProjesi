@@ -1,35 +1,37 @@
-using System;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
+    [Header("Visuals")]
     public GameObject previewObject;
     
-    private Canvas ui;
     private Outline outline;
+    private Canvas canvas;
     
-    private void Start()
+    private void Awake()
     {
-        ui = GetComponentInChildren<Canvas>();
         outline = GetComponent<Outline>();
-        outline.enabled = false;
-        ui.enabled = false;
+        canvas = GetComponentInChildren<Canvas>();
+        OutlineCanvasState(false);
+        HidePreview();
     }
 
-    public void Highlight(bool state)
+    public void OutlineCanvasState(bool state)
     {
         outline.enabled = state;
-        ui.enabled = state;
+        canvas.enabled = state;
     }
 
-    public void ShowPreview(RaycastHit hit, bool state)
+
+    public void ShowPreview(Vector3 worldPos)
     {
-        if (gameObject.CompareTag("item"))
-        {
-            previewObject.transform.position = hit.point;
-            previewObject.transform.rotation = Quaternion.identity;
-            previewObject.SetActive(state);
-        }
+        previewObject.SetActive(true);
+        previewObject.transform.position = worldPos;
+        previewObject.transform.rotation = Quaternion.identity;
     }
 
+    public void HidePreview()
+    {
+        previewObject.SetActive(false);
+    }
 }
