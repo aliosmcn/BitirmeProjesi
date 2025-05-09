@@ -8,12 +8,22 @@ public class Interactable : MonoBehaviour
     private Outline outline;
     private Canvas canvas;
     
+    [SerializeField] private ItemSO itemData;
+
+    public ItemSO ItemData
+    {
+        get
+        {
+            return itemData;
+        }
+    }
+    
     private void Awake()
     {
         outline = GetComponent<Outline>();
         canvas = GetComponentInChildren<Canvas>();
         OutlineCanvasState(false);
-        HidePreview();
+        SetPreviewState(false);
     }
 
     public void OutlineCanvasState(bool state)
@@ -23,15 +33,11 @@ public class Interactable : MonoBehaviour
     }
 
 
-    public void ShowPreview(Vector3 worldPos)
+    public void SetPreviewState(bool state, Vector3 position = default)
     {
-        previewObject.SetActive(true);
-        previewObject.transform.position = worldPos;
-        previewObject.transform.rotation = Quaternion.identity;
-    }
-
-    public void HidePreview()
-    {
-        previewObject.SetActive(false);
+        if(!previewObject) return;
+        
+        previewObject.SetActive(state);
+        if(state) previewObject.transform.SetPositionAndRotation(position, Quaternion.identity);
     }
 }

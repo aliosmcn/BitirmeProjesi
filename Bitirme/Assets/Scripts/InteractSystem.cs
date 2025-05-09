@@ -39,8 +39,7 @@ public class InteractSystem : MonoBehaviour
                 if (currentHover) currentHover.OutlineCanvasState(true);
             }
 
-            if (holdObject) holdObject.ShowPreview(hit.point);
-        }
+            if (holdObject) holdObject.SetPreviewState(true, hit.point); }
         else
         {
             if (currentHover)
@@ -49,7 +48,7 @@ public class InteractSystem : MonoBehaviour
                 currentHover = null;
             }
             
-            if (holdObject) holdObject.HidePreview();
+            if (holdObject) holdObject.SetPreviewState(false);
         }
     }
 
@@ -61,10 +60,18 @@ public class InteractSystem : MonoBehaviour
 
         if (holdObject)
         {
-            holdObject.HidePreview();
-            
+            holdObject.SetPreviewState(false);
+
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
+            {
+                if (hit.collider.TryGetComponent(out Kazan kazan) && kazan.alabiliyorMu)
+                {
+                    currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, Kazan.Instance.GetTransform().transform.position, false));
+                    Kazan.Instance.PlaceObject(holdObject);
+                    return;
+                }
                 currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, hit.point, false));  //PLACE
+            }
             else
                 Drop();
         }
@@ -78,7 +85,7 @@ public class InteractSystem : MonoBehaviour
     private IEnumerator MoveObjectRoutine(Interactable obj, Vector3 targetPos, bool pickup)
     {
         if (currentHover) currentHover.OutlineCanvasState(false);
-        obj.HidePreview();
+        obj.SetPreviewState(false);
         
         SetPhysicsState(obj, false);
         
@@ -125,7 +132,7 @@ public class InteractSystem : MonoBehaviour
         holdObject.transform.SetParent(null);
         holdObject.transform.rotation = Quaternion.identity;
         SetPhysicsState(holdObject, true);
-        holdObject.HidePreview();
+        holdObject.SetPreviewState(false);
         holdObject = null;
     }
     
