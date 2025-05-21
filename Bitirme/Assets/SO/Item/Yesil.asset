@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
   m_Name: Yesil
   m_EditorClassIdentifier: 
-  itemId: 
-  itemName: 
+  itemId: yesil
+  itemName: yesil
   itemIcon: {fileID: 0}
   prefab: {fileID: 0}
-  canSlice: 0
