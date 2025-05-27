@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3464aef373f9394ebf5219bdac097a0, type: 3}
+  m_Name: Yesil
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 11400000, guid: 653e769193ce9d6408434ec9fcf5b25b, type: 2}
+  - {fileID: 11400000, guid: a0337851c6f327948b7b756169ba9ec1, type: 2}
+  result: {fileID: 11400000, guid: 7d2b286dc920d724fa0d73557e85b432, type: 2}

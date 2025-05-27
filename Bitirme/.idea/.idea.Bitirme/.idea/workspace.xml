@@ -6,17 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Domates.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Domates.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Kirmizi.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Kirmizi.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Mor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Mor.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Pembe.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Pembe.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yesil.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Yesil.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickPlaceDrop.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickPlaceDrop.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlacePreview.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlacePreview.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Table.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Table.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Till.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Till.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,6 +110,9 @@
       <workItem from="1745147759539" duration="3942000" />
       <workItem from="1745857596391" duration="1809000" />
       <workItem from="1746793625913" duration="8575000" />
+      <workItem from="1746910575510" duration="2818000" />
+      <workItem from="1747062151405" duration="4548000" />
+      <workItem from="1747829982543" duration="8970000" />
     </task>
     <servers />
   </component>

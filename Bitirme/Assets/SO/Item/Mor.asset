@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
   m_Name: Mor
   m_EditorClassIdentifier: 
-  itemId: 
+  itemId: mor
   itemName: 
   itemIcon: {fileID: 0}
   prefab: {fileID: 0}
-  canSlice: 0
