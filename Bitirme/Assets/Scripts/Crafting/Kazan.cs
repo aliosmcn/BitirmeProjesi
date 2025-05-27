@@ -79,10 +79,12 @@ public class Kazan : MonoBehaviour
         // Eğer recipe yoksa hiçbir şey yapma
         if (resultItem == null || resultItem.prefab == null) 
             return;
-
+        
         // Prefabı oluştur ve Rigidbody'yi al
         GameObject createdItem = Instantiate(resultItem.prefab, spawnPoint.position, Quaternion.identity);
         createdItem.TryGetComponent(out Rigidbody rb);
+        
+        
         
         if (rb)
         {
@@ -101,6 +103,7 @@ public class Kazan : MonoBehaviour
         {
             Debug.LogWarning("Oluşturulan objede Rigidbody yok!");
         }
+        resultItem = null;
     }
 
     public Transform GetTransform()
