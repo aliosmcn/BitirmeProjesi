@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,10 +27,25 @@ public class Kazan : MonoBehaviour
     [SerializeField] private List<Interactable> items;
 
     [SerializeField] private Transform placePoint, spawnPoint;
+    
 
     public bool alabiliyorMu = true;
     
-    private int itemCount = 0;
+
+    public GameObject createdItem;
+    private ItemSO resultItem;
+
+    private void OnEnable()
+    {
+        EventManager.OnMixed += CreateRecipe;
+        EventManager.OnMixing += Mix;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.OnMixed -= CreateRecipe;
+        EventManager.OnMixing -= Mix;
+    }
 
     public void PlaceObject(Interactable obj)
     {
@@ -38,72 +54,93 @@ public class Kazan : MonoBehaviour
         
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CreateRecipe();
-        }
-    }
-
     public ItemSO SearchRecipes()
     {
-        foreach(var recipe in recipes)
+        foreach (var recipe in recipes)
         {
+            int matchedCount = 0;
+
             foreach (var material in recipe.materials)
             {
                 foreach (var item in items)
                 {
                     if (item.ItemData.ItemID == material.ItemID)
                     {
-                        itemCount++;
-                    }
-
-                    if (itemCount == recipe.materials.Count)
-                    {
-                        return recipe.result;
+                        matchedCount++;
+                        break;
                     }
                 }
             }
 
-            itemCount = 0;
+            if (matchedCount == recipe.materials.Count)
+                return recipe.result;
         }
 
         return null;
     }
 
+    public void Mix()
+    {
+        Kepce.Instance.gameObject.TryGetComponent(out Animator animator);
+        animator.Play("Karistirma");
+    }
     public void CreateRecipe()
     {
-        ItemSO resultItem = SearchRecipes();
+        resultItem = null;
+        resultItem = SearchRecipes();
         
-        // Eğer recipe yoksa hiçbir şey yapma
         if (resultItem == null || resultItem.prefab == null) 
             return;
         
-        // Prefabı oluştur ve Rigidbody'yi al
-        GameObject createdItem = Instantiate(resultItem.prefab, spawnPoint.position, Quaternion.identity);
+        createdItem = Instantiate(resultItem.prefab, spawnPoint.position, Quaternion.identity);
         createdItem.TryGetComponent(out Rigidbody rb);
-        
-        
+        foreach (var item in items)
+        {
+            Destroy(item.gameObject);
+        }
+        items.Clear();
+        alabiliyorMu = true;
+        Debug.Log(createdItem.name);
         
         if (rb)
         {
             rb.isKinematic = true;
             
-            LeanTween.moveY(createdItem, spawnPoint.position.y + 1.2f, 1.5f)
-                .setEase(LeanTweenType.easeOutQuad)
-                .setOnComplete(() => {
-                    
-                    LeanTween.rotateAround(createdItem, Vector3.up, 10f, 0.5f)
-                        .setEase(LeanTweenType.easeInOutSine)
-                        .setLoopPingPong(1);
-                });
+            StartCoroutine(AnimateCreatedItem(createdItem));
         }
         else
         {
             Debug.LogWarning("Oluşturulan objede Rigidbody yok!");
         }
-        resultItem = null;
+    }
+    IEnumerator AnimateCreatedItem(GameObject obj)
+    {
+        Vector3 startPos = obj.transform.position;
+        Vector3 targetPos = startPos + Vector3.up * 1.2f;
+        float duration = 1.5f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            obj.transform.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        obj.transform.position = targetPos;
+
+        // Döndürme animasyonu
+        float rotateDuration = 0.5f;
+        float rotateElapsed = 0f;
+        Quaternion startRot = obj.transform.rotation;
+        Quaternion endRot = startRot * Quaternion.Euler(0, 10f, 0);
+
+        while (rotateElapsed < rotateDuration)
+        {
+            obj.transform.rotation = Quaternion.Lerp(startRot, endRot, Mathf.PingPong(rotateElapsed * 2, 1));
+            rotateElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     public Transform GetTransform()

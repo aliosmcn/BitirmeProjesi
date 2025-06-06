@@ -15,4 +15,4 @@ MonoBehaviour:
   itemId: yesil
   itemName: yesil
   itemIcon: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 298353030207518027, guid: 0f7c0fdee5edf16458aac4cfd361a26a, type: 3}
