@@ -1,9 +1,16 @@
+using System;
 using UnityEngine;
 using System.Collections;
-using Unity.Mathematics;
 
 public class InteractSystem : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private VoidEvent onEPressed;
+    [SerializeField] private VoidEvent onSpacePressed;
+    [SerializeField] private VoidEvent onCtrlPressed;
+    [SerializeField] private VoidEvent onRightClickPressed;
+    [SerializeField] private VoidEvent onLeftClickPressed;
+    
     [Header("Settings")]
     [SerializeField] private float rayDistance = 2.2f;
     [SerializeField] private Transform holdPoint;
@@ -13,14 +20,30 @@ public class InteractSystem : MonoBehaviour
     private Camera cam;
     private Interactable currentHover;
     private Interactable holdObject;
-    private Coroutine currentRoutine; 
+    private Coroutine currentRoutine;
+
+    private void OnEnable()
+    {
+        onEPressed.AddListener(PickPlaceDrop);
+        onLeftClickPressed.AddListener(Craft);
+        onRightClickPressed.AddListener(ClearKazan);
+    }
+    
+    private void OnDisable()
+    {
+        onEPressed.RemoveListener(PickPlaceDrop);
+        onLeftClickPressed.RemoveListener(Craft);
+        onRightClickPressed.RemoveListener(ClearKazan);
+        
+        if (currentHover) currentHover.OutlineCanvasState(false);
+        if (currentRoutine != null) StopCoroutine(currentRoutine);
+    }
 
     void Awake() => cam = Camera.main;
 
     void Update()
     {
         HandleRaycast();
-        HandleInput();
     }
 
     private void HandleRaycast()
@@ -52,28 +75,35 @@ public class InteractSystem : MonoBehaviour
         }
     }
 
-    private void HandleInput()
+    private void PickPlaceDrop()
     {
-        if (!Input.GetKeyDown(KeyCode.E)) return;
-
         if (currentRoutine != null) return;
-
+        
+        //elimizde obje var birakacagiz
         if (holdObject)
         {
             holdObject.SetPreviewState(false);
-
+            
+            //birakacak yer var
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
             {
                 if (hit.collider.TryGetComponent(out Kazan kazan) && kazan.alabiliyorMu)
                 {
-                    currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, Kazan.Instance.GetTransform().transform.position, false));
+                    currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject,
+                    Kazan.Instance.GetTransform().transform.position, false));
                     Kazan.Instance.PlaceObject(holdObject);
                     return;
                 }
-                currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, hit.point, false));  //PLACE
+                if (kazan && !kazan.alabiliyorMu) //Daha fazla obje alamaz
+                {
+                    Drop();
+                    return;
+                }
+                currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, hit.point, false)); //PLACE
             }
             else
                 Drop();
+
         }
         else if (currentHover)
         {
@@ -81,7 +111,42 @@ public class InteractSystem : MonoBehaviour
         }
     }
 
-    //Smooth Pick / Place
+    private void Drop()
+    {
+        holdObject.transform.SetParent(null);
+        holdObject.transform.rotation = Quaternion.identity;
+        SetPhysicsState(holdObject, true);
+        holdObject.SetPreviewState(false);
+        holdObject = null;
+    }
+    private void Craft()
+    {
+        if (currentRoutine != null) return;
+        if (holdObject) return;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
+        {
+            if (hit.collider.TryGetComponent(out Kazan kazan))
+            {
+                Kazan.Instance.Mix();
+            }
+        }
+    }
+
+    private void ClearKazan()
+    {
+        if (currentRoutine != null) return;
+        if (holdObject) return;
+        if (Kepce.Instance.TryGetComponent(out Animator animator) && animator.GetBool("Mixing")) return;
+        
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
+        {
+            if (hit.collider.TryGetComponent(out Kazan kazan))
+            {
+                Kazan.Instance.ClearItems();
+            }
+        }
+    }
+
     private IEnumerator MoveObjectRoutine(Interactable obj, Vector3 targetPos, bool pickup)
     {
         if (currentHover) currentHover.OutlineCanvasState(false);
@@ -126,16 +191,6 @@ public class InteractSystem : MonoBehaviour
         currentRoutine = null;
     }
 
-    //Drop
-    private void Drop()
-    {
-        holdObject.transform.SetParent(null);
-        holdObject.transform.rotation = Quaternion.identity;
-        SetPhysicsState(holdObject, true);
-        holdObject.SetPreviewState(false);
-        holdObject = null;
-    }
-    
     //HoldObject Fizikleri
     private void SetPhysicsState(Interactable obj, bool state)
     {
@@ -143,11 +198,5 @@ public class InteractSystem : MonoBehaviour
         if (obj.TryGetComponent(out Rigidbody r)) r.isKinematic = !state;
     }
     
-    //YOK OLURSA
-    private void OnDisable()
-    {
-        if (currentHover) currentHover.OutlineCanvasState(false);
-        if (holdObject) Drop();
-        if (currentRoutine != null) StopCoroutine(currentRoutine);
-    }
 }
+

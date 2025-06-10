@@ -81,9 +81,13 @@ public class Kazan : MonoBehaviour
 
     public void Mix()
     {
+        if (items.Count == 0) return;
+        if (!SearchRecipes()) return;
+    
         Kepce.Instance.gameObject.TryGetComponent(out Animator animator);
-        animator.Play("Karistirma");
+        animator.SetTrigger("Mixing");
     }
+    
     public void CreateRecipe()
     {
         resultItem = null;
@@ -94,13 +98,7 @@ public class Kazan : MonoBehaviour
         
         createdItem = Instantiate(resultItem.prefab, spawnPoint.position, Quaternion.identity);
         createdItem.TryGetComponent(out Rigidbody rb);
-        foreach (var item in items)
-        {
-            Destroy(item.gameObject);
-        }
-        items.Clear();
-        alabiliyorMu = true;
-        Debug.Log(createdItem.name);
+        ClearItems();
         
         if (rb)
         {
@@ -141,6 +139,16 @@ public class Kazan : MonoBehaviour
             rotateElapsed += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void ClearItems()
+    {
+        foreach (var item in items)
+        {
+            Destroy(item.gameObject);
+        }
+        items.Clear();
+        alabiliyorMu = true;
     }
 
     public Transform GetTransform()
