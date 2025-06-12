@@ -15,14 +15,14 @@ public class ItemSO : ScriptableObject
         }
     }
 
-    [SerializeField] public string itemName;
-    [SerializeField] private Sprite itemIcon;
+    [SerializeField] public string UIText;
+    [SerializeField] private Sprite UIImage;
 
     public Sprite ItemIcon
     {
         get
         {
-            return itemIcon;
+            return UIImage;
         }
     }
 

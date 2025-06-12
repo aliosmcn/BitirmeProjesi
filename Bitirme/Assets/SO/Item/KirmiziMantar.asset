@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
-  m_Name: Mor
+  m_Name: KirmiziMantar
   m_EditorClassIdentifier: 
-  itemId: mor
-  itemName: 
-  itemIcon: {fileID: 0}
-  prefab: {fileID: 0}
+  itemId: kirmiziMantar
+  UIText: for Pick/Drop
+  UIImage: {fileID: 0}
+  prefab: {fileID: 6249745842939447591, guid: 28aa89221404a874d89adcd7ebdefe7a, type: 3}

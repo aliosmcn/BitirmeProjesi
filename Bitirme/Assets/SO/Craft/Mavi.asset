@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3464aef373f9394ebf5219bdac097a0, type: 3}
+  m_Name: Mavi
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 11400000, guid: 2189570d58035534daf10298c952d70c, type: 2}
+  - {fileID: 11400000, guid: 158d0a3dd31642a41bcb6d916dfabfbf, type: 2}
+  - {fileID: 11400000, guid: 372d3f6bae4c6b44390fa31e7d919d21, type: 2}
+  result: {fileID: 11400000, guid: 3ea804765991c664291f2378da3d4680, type: 2}

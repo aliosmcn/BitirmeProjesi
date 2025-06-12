@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
-  m_Name: Pembe
+  m_Name: Mavi
   m_EditorClassIdentifier: 
-  itemId: pembe
-  itemName: 
-  itemIcon: {fileID: 0}
-  prefab: {fileID: 0}
+  itemId: mavi
+  UIText: for Pick/Drop
+  UIImage: {fileID: 0}
+  prefab: {fileID: 7232688516146282158, guid: a30d18c0e84127148a1c409520ffe5dd, type: 3}

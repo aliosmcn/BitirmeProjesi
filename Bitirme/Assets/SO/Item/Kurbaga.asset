@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
   m_Name: Kurbaga
   m_EditorClassIdentifier: 
-  itemId: Kurbaga
-  itemName: 
-  itemIcon: {fileID: 0}
-  prefab: {fileID: 0}
+  itemId: kurbaga
+  UIText: for Pick/Drop
+  UIImage: {fileID: 0}
+  prefab: {fileID: 1431864003956824042, guid: ec92fc691737c4145af15b0da35fc0a6, type: 3}
