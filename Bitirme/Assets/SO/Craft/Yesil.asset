@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Yesil
   m_EditorClassIdentifier: 
   materials:
-  - {fileID: 11400000, guid: 653e769193ce9d6408434ec9fcf5b25b, type: 2}
-  - {fileID: 11400000, guid: a0337851c6f327948b7b756169ba9ec1, type: 2}
+  - {fileID: 11400000, guid: 09428d3fcf6de1b48a8887d70b44ab47, type: 2}
+  - {fileID: 11400000, guid: a205cc573e5bb5d46a117ddfa4ee0bde, type: 2}
   result: {fileID: 11400000, guid: 7d2b286dc920d724fa0d73557e85b432, type: 2}

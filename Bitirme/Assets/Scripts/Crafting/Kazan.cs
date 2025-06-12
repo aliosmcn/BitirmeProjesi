@@ -50,7 +50,7 @@ public class Kazan : MonoBehaviour
     public void PlaceObject(Interactable obj)
     {
         items.Add(obj);
-        if (items.Count == 4) alabiliyorMu = false;
+        if (items.Count == 3) alabiliyorMu = false;
         
     }
 
@@ -85,7 +85,7 @@ public class Kazan : MonoBehaviour
         if (!SearchRecipes()) return;
     
         Kepce.Instance.gameObject.TryGetComponent(out Animator animator);
-        animator.SetTrigger("Mixing");
+        animator.SetBool("Mixing", true); 
     }
     
     public void CreateRecipe()

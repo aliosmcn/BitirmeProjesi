@@ -87,15 +87,16 @@ public class InteractSystem : MonoBehaviour
             //birakacak yer var
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
             {
-                if (hit.collider.TryGetComponent(out Kazan kazan) && kazan.alabiliyorMu)
+                if (hit.collider.TryGetComponent(out Kazan kazan) && kazan.alabiliyorMu && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
                 {
                     currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject,
                     Kazan.Instance.GetTransform().transform.position, false));
                     Kazan.Instance.PlaceObject(holdObject);
                     return;
                 }
-                if (kazan && !kazan.alabiliyorMu) //Daha fazla obje alamaz
+                if (kazan && !kazan.alabiliyorMu || kazan && kazan.alabiliyorMu && Kepce.Instance.TryGetComponent(out Animator animator2) && animator2.GetBool("Mixing")) 
                 {
+                    //(KAZAN DOLU || KULLANIMDA)
                     Drop();
                     return;
                 }
@@ -121,11 +122,13 @@ public class InteractSystem : MonoBehaviour
     }
     private void Craft()
     {
+        
         if (currentRoutine != null) return;
         if (holdObject) return;
+        
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.TryGetComponent(out Kazan kazan))
+            if (hit.collider.TryGetComponent(out Kazan kazan) && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
             {
                 Kazan.Instance.Mix();
             }

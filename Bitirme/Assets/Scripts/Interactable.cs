@@ -20,7 +20,8 @@ public class Interactable : MonoBehaviour
     
     private void Awake()
     {
-        outline = GetComponent<Outline>();
+        TryGetComponent(out Outline outl);
+        if (outl) outline = outl;
         canvas = GetComponentInChildren<Canvas>();
         OutlineCanvasState(false);
         SetPreviewState(false);
@@ -28,8 +29,8 @@ public class Interactable : MonoBehaviour
 
     public void OutlineCanvasState(bool state)
     {
-        outline.enabled = state;
-        canvas.enabled = state;
+        if (outline) outline.enabled = state;
+        if (canvas) canvas.enabled = state;
     }
 
 

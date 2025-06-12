@@ -3,11 +3,7 @@ using UnityEngine;
 
 public class RotateUI : MonoBehaviour
 {
-    private Camera cam;
-    private void Awake()
-    {
-        cam = Camera.main;
-    }
-
+    [SerializeField] private Camera cam;
+    
     private void LateUpdate() => transform.forward = cam.transform.forward;
 }

@@ -23,6 +23,7 @@ public class Kepce : MonoBehaviour
     
     public void OnAnimationEnd()
     {
+        GetComponent<Animator>().SetBool("Mixing", false); 
         EventManager.OnMixed.Invoke();
     }
 }
