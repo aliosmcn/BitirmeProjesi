@@ -10,6 +10,7 @@ public class InteractSystem : MonoBehaviour
     [SerializeField] private VoidEvent onCtrlPressed;
     [SerializeField] private VoidEvent onRightClickPressed;
     [SerializeField] private VoidEvent onLeftClickPressed;
+    [SerializeField] private ItemSOEvent onLookingItem;
     
     [Header("Settings")]
     [SerializeField] private float rayDistance = 2.2f;
@@ -58,8 +59,11 @@ public class InteractSystem : MonoBehaviour
             if (hover != currentHover)
             {
                 if (currentHover) currentHover.OutlineCanvasState(false);
+                onLookingItem.Raise(null);
                 currentHover = hover;
                 if (currentHover) currentHover.OutlineCanvasState(true);
+                if (hover)
+                    onLookingItem.Raise(currentHover.ItemData);
             }
 
             if (holdObject) holdObject.SetPreviewState(true, hit.point); }
@@ -69,6 +73,7 @@ public class InteractSystem : MonoBehaviour
             {
                 currentHover.OutlineCanvasState(false);
                 currentHover = null;
+                onLookingItem.Raise(null);
             }
             
             if (holdObject) holdObject.SetPreviewState(false);

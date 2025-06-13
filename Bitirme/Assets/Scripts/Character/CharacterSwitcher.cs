@@ -1,16 +1,22 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterSwitcher : MonoBehaviour
 {
+    [Header("InteractiveUI")]
+    [SerializeField] private Sprite sprite;
+    
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject crow;
     [SerializeField] private float switchDistance = 5f;
 
     private bool isPlayerActive = true;
+    
+    
 
     void Start()
     {
-        // Initialize the characters' active states
         player.SetActive(true);
         crow.SetActive(false);
         isPlayerActive = true;
@@ -59,5 +65,21 @@ public class CharacterSwitcher : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, switchDistance);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GameUIController.Instance.SetInteractive(true, "Switch", sprite);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            GameUIController.Instance.SetInteractive(false, "Switch", sprite);
+        }
     }
 }
