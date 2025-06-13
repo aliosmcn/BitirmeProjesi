@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,6 +116,7 @@
       <workItem from="1749639693617" duration="2948000" />
       <workItem from="1749740907435" duration="8471000" />
       <workItem from="1749759052575" duration="4633000" />
+      <workItem from="1749809343076" duration="1207000" />
     </task>
     <servers />
   </component>

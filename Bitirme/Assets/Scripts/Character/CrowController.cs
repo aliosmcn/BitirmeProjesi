@@ -34,7 +34,7 @@ public class CrowController : MonoBehaviour
 
     private void OnDisable()
     {
-        isFlying = false;
+        isFlying = false; 
     }
 
 
