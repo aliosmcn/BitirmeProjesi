@@ -29,6 +29,8 @@ public class GameUIController : MonoBehaviour
     [SerializeField] private GameObject bar;
     [SerializeField] private Image directiveImg;
     [SerializeField] private Text directiveText;
+    
+    public GameObject crosshair;
 
     
     private void OnEnable()

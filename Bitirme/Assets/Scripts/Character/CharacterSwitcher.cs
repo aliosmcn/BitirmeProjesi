@@ -6,6 +6,7 @@ public class CharacterSwitcher : MonoBehaviour
 {
     [Header("InteractiveUI")]
     [SerializeField] private Sprite sprite;
+
     
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject crow;
@@ -17,8 +18,6 @@ public class CharacterSwitcher : MonoBehaviour
 
     void Start()
     {
-        player.SetActive(true);
-        crow.SetActive(false);
         isPlayerActive = true;
     }
 
@@ -48,16 +47,20 @@ public class CharacterSwitcher : MonoBehaviour
     {
         player.SetActive(false);
         crow.SetActive(true);
-        crow.transform.position = player.transform.position; // Optional: spawn crow at player position
+        crow.transform.position = player.transform.position; 
         isPlayerActive = false;
+        GameUIController.Instance.SetInteractive(false, "Switch", sprite);
+        GameUIController.Instance.crosshair.SetActive(false);
     }
 
     void SwitchToPlayer()
     {
         crow.SetActive(false);
         player.SetActive(true);
-        player.transform.position = crow.transform.position; // Optional: spawn player at crow position
+        player.transform.position = crow.transform.position; 
         isPlayerActive = true;
+        GameUIController.Instance.SetInteractive(false, "Switch", sprite);
+        GameUIController.Instance.crosshair.SetActive(true);
     }
 
     // Optional: Visualize the switch distance in the editor

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class CrowController : MonoBehaviour
@@ -6,10 +5,10 @@ public class CrowController : MonoBehaviour
     [Header("Movement Settings")]
     public float acceleration = 2f;
     public float deceleration = 2f;
-    public float minFlightSpeed = 2f;
+    public float minFlightSpeed = 0f; // Artık 0'a kadar düşebilir
     public float maxFlightSpeed = 7f;
     public float maxBankAngle = 45f;
-    public float maxPitchAngle = 30f; // Added pitch angle for vertical movement
+    public float maxPitchAngle = 30f;
     public float bankSpeed = 5f;
     public float rotationSpeed = 100f;
     public float verticalSpeed = 3f;
@@ -17,41 +16,55 @@ public class CrowController : MonoBehaviour
     
     [Header("References")]
     public Transform crowModel;
+    private Animator animator;
     
     private Rigidbody rb;
     private bool isFlying = false;
+    private bool isCollided = false; // Çarpışma durumu
     private float targetBankAngle = 0f;
-    private float targetPitchAngle = 0f; // Added pitch angle target
+    private float targetPitchAngle = 0f;
     private float targetVerticalSpeed = 0f;
 
     private void OnEnable()
     {
-        isFlying = false;
         rb = GetComponent<Rigidbody>();
+        animator = crowModel.gameObject.GetComponent<Animator>();
         rb.useGravity = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void OnDisable()
+    void OnCollisionEnter(Collision collision)
     {
-        isFlying = false; 
+        // Çarpışma algılandığında
+        isCollided = true;
+        rb.linearVelocity = Vector3.zero;
+        animator.SetTrigger("Hit");
     }
-
 
     void Update()
     {
-        if (!isFlying && Input.GetKeyDown(KeyCode.Space))
+        // Çarpışma sonrası W tuşu ile yeniden hareket
+        if (isCollided && Input.GetKeyDown(KeyCode.W))
         {
+            isCollided = false;
+            isFlying = true;
+            rb.linearVelocity = transform.forward * minFlightSpeed;
+            animator.SetTrigger("Jump");
+        }
+        // Başlangıç hareketi
+        if (!isFlying && !isCollided && Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Jump");
             rb.linearVelocity = transform.forward * minFlightSpeed;
             isFlying = true;
         }
 
-        if (isFlying)
+        if (isFlying && !isCollided)
         {
             HandleMovement();
             HandleBanking();
             HandleVertical();
-            UpdateModelRotation(); // Combined rotation handling
+            UpdateModelRotation();
         }
     }
 
@@ -60,32 +73,25 @@ public class CrowController : MonoBehaviour
         Vector3 forwardDirection = transform.forward;
         float currentForwardSpeed = Vector3.Dot(rb.linearVelocity, forwardDirection);
 
-        if (currentForwardSpeed <= 0)
-        {
-            rb.linearVelocity = forwardDirection * minFlightSpeed;
-            return;
-        }
-
+        // Hız kontrolü (artık 0'a kadar düşebilir)
         if (Input.GetKey(KeyCode.W))
         {
-            if (currentForwardSpeed < maxFlightSpeed)
-            {
-                rb.AddForce(forwardDirection * acceleration, ForceMode.Acceleration);
-            }
+            rb.AddForce(forwardDirection * acceleration, ForceMode.Acceleration);
+            isCollided = false;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            if (currentForwardSpeed > minFlightSpeed)
-            {
-                rb.AddForce(-forwardDirection * deceleration, ForceMode.Acceleration);
-            }
+            rb.AddForce(-forwardDirection * deceleration, ForceMode.Acceleration);
         }
 
-        rb.linearVelocity = forwardDirection * Mathf.Clamp(
-            currentForwardSpeed,
+        // Hız sınırlaması
+        float newForwardSpeed = Mathf.Clamp(
+            Vector3.Dot(rb.linearVelocity, forwardDirection),
             minFlightSpeed,
             maxFlightSpeed
-        ) + Vector3.up * rb.linearVelocity.y;
+        );
+
+        rb.linearVelocity = forwardDirection * newForwardSpeed + new Vector3(0, rb.linearVelocity.y, 0);
     }
 
     void HandleBanking()
@@ -98,21 +104,15 @@ public class CrowController : MonoBehaviour
     void HandleVertical()
     {
         float mouseY = -Input.GetAxis("Mouse Y");
-        
-        // Set pitch angle based on vertical movement
         targetPitchAngle = -mouseY * maxPitchAngle;
-        
-        // Fare hareketine göre hedef hız belirle
         targetVerticalSpeed = mouseY * verticalSpeed;
         
-        // Yumuşak geçiş için Lerp
         float currentYVelocity = Mathf.Lerp(
             rb.linearVelocity.y,
             targetVerticalSpeed,
             Time.deltaTime * 5f
         );
         
-        // Sadece Y eksenini güncelle
         rb.linearVelocity = new Vector3(
             rb.linearVelocity.x,
             currentYVelocity,
@@ -122,11 +122,10 @@ public class CrowController : MonoBehaviour
 
     void UpdateModelRotation()
     {
-        // Combine banking and pitch rotations
         Quaternion targetRotation = Quaternion.Euler(
-            targetPitchAngle, // Pitch (forward/backward tilt)
+            targetPitchAngle,
             0,
-            targetBankAngle  // Bank (left/right tilt)
+            targetBankAngle
         );
         
         crowModel.localRotation = Quaternion.Slerp(
