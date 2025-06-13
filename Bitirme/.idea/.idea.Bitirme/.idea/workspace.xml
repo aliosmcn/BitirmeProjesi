@@ -6,30 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/kurba.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/kurba.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kurbağa/Kurbaga.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kurbağa/Kurbaga.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kurbağa/Kurbaga.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kurbağa/Kurbaga.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar3/Mantar3.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar3/Mantar3.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/papatya/Papatya.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/papatya/Papatya.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DomatesHam.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DomatesHam.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GreenPotion.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GreenPotion.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tarif/Gerekli/KARAKTER.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tarif/Gerekli/KARAKTER.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tarif/Gerekli/kurbaga.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tarif/Gerekli/kurbaga.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Kirmizi.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Kirmizi.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Kurbaga.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Kurbaga.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Mor.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Mor.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Pembe.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Pembe.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yesil.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yesil.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yogurt.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Yogurt.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ItemSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ItemSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +120,7 @@
       <workItem from="1749582007617" duration="3992000" />
       <workItem from="1749639693617" duration="2948000" />
       <workItem from="1749740907435" duration="8471000" />
-      <workItem from="1749759052575" duration="1302000" />
+      <workItem from="1749759052575" duration="4633000" />
     </task>
     <servers />
   </component>

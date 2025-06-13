@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CrowController : MonoBehaviour
@@ -8,8 +9,11 @@ public class CrowController : MonoBehaviour
     public float minFlightSpeed = 2f;
     public float maxFlightSpeed = 7f;
     public float maxBankAngle = 45f;
+    public float maxPitchAngle = 30f; // Added pitch angle for vertical movement
     public float bankSpeed = 5f;
     public float rotationSpeed = 100f;
+    public float verticalSpeed = 3f;
+    public float mouseYSensitivity = 0.1f;
     
     [Header("References")]
     public Transform crowModel;
@@ -17,13 +21,22 @@ public class CrowController : MonoBehaviour
     private Rigidbody rb;
     private bool isFlying = false;
     private float targetBankAngle = 0f;
+    private float targetPitchAngle = 0f; // Added pitch angle target
+    private float targetVerticalSpeed = 0f;
 
-    void Start()
+    private void OnEnable()
     {
+        isFlying = false;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    private void OnDisable()
+    {
+        isFlying = false;
+    }
+
 
     void Update()
     {
@@ -37,16 +50,16 @@ public class CrowController : MonoBehaviour
         {
             HandleMovement();
             HandleBanking();
+            HandleVertical();
+            UpdateModelRotation(); // Combined rotation handling
         }
     }
 
     void HandleMovement()
     {
         Vector3 forwardDirection = transform.forward;
-        Vector3 currentVelocity = rb.linearVelocity;
-        float currentForwardSpeed = Vector3.Dot(currentVelocity, forwardDirection);
+        float currentForwardSpeed = Vector3.Dot(rb.linearVelocity, forwardDirection);
 
-        // KESİNLİKLE GERİ GİTME ENGELLEYİCİ
         if (currentForwardSpeed <= 0)
         {
             rb.linearVelocity = forwardDirection * minFlightSpeed;
@@ -68,23 +81,58 @@ public class CrowController : MonoBehaviour
             }
         }
 
-        // Hızı her frame'de ileri yöne kilitle
         rb.linearVelocity = forwardDirection * Mathf.Clamp(
-            Vector3.Dot(rb.linearVelocity, forwardDirection),
+            currentForwardSpeed,
             minFlightSpeed,
             maxFlightSpeed
-        );
+        ) + Vector3.up * rb.linearVelocity.y;
     }
 
     void HandleBanking()
     {
         float mouseX = Input.GetAxis("Mouse X");
         targetBankAngle = -mouseX * maxBankAngle;
+        transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
+    }
+
+    void HandleVertical()
+    {
+        float mouseY = -Input.GetAxis("Mouse Y");
+        
+        // Set pitch angle based on vertical movement
+        targetPitchAngle = -mouseY * maxPitchAngle;
+        
+        // Fare hareketine göre hedef hız belirle
+        targetVerticalSpeed = mouseY * verticalSpeed;
+        
+        // Yumuşak geçiş için Lerp
+        float currentYVelocity = Mathf.Lerp(
+            rb.linearVelocity.y,
+            targetVerticalSpeed,
+            Time.deltaTime * 5f
+        );
+        
+        // Sadece Y eksenini güncelle
+        rb.linearVelocity = new Vector3(
+            rb.linearVelocity.x,
+            currentYVelocity,
+            rb.linearVelocity.z
+        );
+    }
+
+    void UpdateModelRotation()
+    {
+        // Combine banking and pitch rotations
+        Quaternion targetRotation = Quaternion.Euler(
+            targetPitchAngle, // Pitch (forward/backward tilt)
+            0,
+            targetBankAngle  // Bank (left/right tilt)
+        );
+        
         crowModel.localRotation = Quaternion.Slerp(
             crowModel.localRotation,
-            Quaternion.Euler(0, 0, targetBankAngle),
+            targetRotation,
             bankSpeed * Time.deltaTime
         );
-        transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
     }
 }
