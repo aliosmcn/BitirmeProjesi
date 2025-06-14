@@ -1,11 +1,16 @@
+using System;
 using UnityEngine;
 
 public class CrowController : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private VoidEvent onSwitchCrow;
+    [SerializeField] private VoidEvent onSwitchCharacter;
+    
     [Header("Movement Settings")]
     public float acceleration = 2f;
     public float deceleration = 2f;
-    public float minFlightSpeed = 0f; // Artık 0'a kadar düşebilir
+    public float minFlightSpeed = 0f;
     public float maxFlightSpeed = 7f;
     public float maxBankAngle = 45f;
     public float maxPitchAngle = 30f;
@@ -16,27 +21,36 @@ public class CrowController : MonoBehaviour
     
     [Header("References")]
     public Transform crowModel;
-    private Animator animator;
     
+    private Animator animator;
     private Rigidbody rb;
-    private bool isFlying = false;
-    private bool isCollided = false; // Çarpışma durumu
+    public bool isFlying = false;
+    public bool isCollided = false;
     private float targetBankAngle = 0f;
     private float targetPitchAngle = 0f;
     private float targetVerticalSpeed = 0f;
 
-    private void OnEnable()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        animator = crowModel.gameObject.GetComponent<Animator>();
-        rb.useGravity = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        animator = crowModel.GetComponent<Animator>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnEnable()
     {
-        // Çarpışma algılandığında
-        isCollided = true;
+        rb.useGravity = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        onSwitchCrow.AddListener(OnSwitch);
+    }
+
+    private void OnDisable()
+    {
+        onSwitchCrow.RemoveListener(OnSwitch);
+    }
+
+    private void OnSwitch()
+    {
+        transform.rotation = Quaternion.identity;
         rb.linearVelocity = Vector3.zero;
         animator.SetTrigger("Hit");
     }
@@ -46,17 +60,13 @@ public class CrowController : MonoBehaviour
         // Çarpışma sonrası W tuşu ile yeniden hareket
         if (isCollided && Input.GetKeyDown(KeyCode.W))
         {
-            isCollided = false;
-            isFlying = true;
-            rb.linearVelocity = transform.forward * minFlightSpeed;
-            animator.SetTrigger("Jump");
+            ResetAfterCollision();
         }
+
         // Başlangıç hareketi
-        if (!isFlying && !isCollided && Input.GetKeyDown(KeyCode.Space))
+        if (!isFlying && Input.GetKeyDown(KeyCode.Space))
         {
-            animator.SetTrigger("Jump");
-            rb.linearVelocity = transform.forward * minFlightSpeed;
-            isFlying = true;
+            StartFlying();
         }
 
         if (isFlying && !isCollided)
@@ -65,6 +75,48 @@ public class CrowController : MonoBehaviour
             HandleBanking();
             HandleVertical();
             UpdateModelRotation();
+            
+            // Yüksekliğe göre animasyon kontrolü
+            UpdateFlightAnimation();
+        }
+    }
+
+    void StartFlying()
+    {
+        rb.linearVelocity = transform.forward * minFlightSpeed;
+        isFlying = true;
+        animator.SetTrigger("Jump");
+        animator.SetBool("Down", true);
+    }
+
+    void ResetAfterCollision()
+    {
+        isCollided = false;
+        isFlying = true;
+        rb.linearVelocity = transform.forward * minFlightSpeed;
+        animator.SetTrigger("Jump");
+        animator.SetBool("Down", true);
+    }
+
+    void UpdateFlightAnimation()
+    {
+        // Yüksekliğe göre animasyon kontrolü
+        float verticalVelocity = rb.linearVelocity.y;
+        
+        if (verticalVelocity < -0.2f) // Belirgin şekilde aşağı iniyorsa
+        {
+            animator.SetBool("Down", true);
+            animator.SetBool("Up", false);
+        }
+        else if (verticalVelocity > 0.2f) // Belirgin şekilde yukarı çıkıyorsa
+        {
+            animator.SetBool("Up", true);
+            animator.SetBool("Down", false);
+        }
+        else // Düz uçuş veya minimal hareket
+        {
+            animator.SetBool("Up", false);
+            animator.SetBool("Down", false);
         }
     }
 
@@ -73,25 +125,20 @@ public class CrowController : MonoBehaviour
         Vector3 forwardDirection = transform.forward;
         float currentForwardSpeed = Vector3.Dot(rb.linearVelocity, forwardDirection);
 
-        // Hız kontrolü (artık 0'a kadar düşebilir)
         if (Input.GetKey(KeyCode.W))
         {
             rb.AddForce(forwardDirection * acceleration, ForceMode.Acceleration);
-            isCollided = false;
         }
         else if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(-forwardDirection * deceleration, ForceMode.Acceleration);
         }
 
-        // Hız sınırlaması
-        float newForwardSpeed = Mathf.Clamp(
-            Vector3.Dot(rb.linearVelocity, forwardDirection),
+        rb.linearVelocity = forwardDirection * Mathf.Clamp(
+            currentForwardSpeed,
             minFlightSpeed,
             maxFlightSpeed
-        );
-
-        rb.linearVelocity = forwardDirection * newForwardSpeed + new Vector3(0, rb.linearVelocity.y, 0);
+        ) + new Vector3(0, rb.linearVelocity.y, 0);
     }
 
     void HandleBanking()
@@ -133,5 +180,13 @@ public class CrowController : MonoBehaviour
             targetRotation,
             bankSpeed * Time.deltaTime
         );
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("carpti");
+        isCollided = true;
+        rb.linearVelocity = Vector3.zero;
+        animator.SetTrigger("Hit");
+        animator.SetBool("Down", false); 
     }
 }

@@ -6,22 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Karga/Fly_Anim.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Karga/Fly_Anim.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Karga/Idle1_Anim.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Karga/Idle1_Anim.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Karga/Move_Anim.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Karga/Move_Anim.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/T_Karga_cls_D.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/T_Karga_cls_D.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga2.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Fly_Anim.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Fly_Anim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +23,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Crafting/CraftingRecipe.cs" root0="FORCE_HIGHLIGHTING" />
@@ -133,6 +125,8 @@
       <workItem from="1749740907435" duration="8471000" />
       <workItem from="1749759052575" duration="4633000" />
       <workItem from="1749809343076" duration="1207000" />
+      <workItem from="1749898895600" duration="8691000" />
+      <workItem from="1749933334265" duration="594000" />
     </task>
     <servers />
   </component>

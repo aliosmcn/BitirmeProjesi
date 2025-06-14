@@ -1,16 +1,23 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class CharacterSwitcher : MonoBehaviour
+public class Switcher : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private VoidEvent onSwitchCrow;
+    [SerializeField] private VoidEvent onSwitchCharacter;
+    
     [Header("InteractiveUI")]
     [SerializeField] private Sprite sprite;
 
     
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerCam;
     [SerializeField] private GameObject crow;
+    [SerializeField] private GameObject crowCam;
     [SerializeField] private float switchDistance = 5f;
+
+    [SerializeField] private Transform crowTarget;
+    [SerializeField] private Transform playerTarget;
 
     private bool isPlayerActive = true;
     
@@ -19,6 +26,8 @@ public class CharacterSwitcher : MonoBehaviour
     void Start()
     {
         isPlayerActive = true;
+        playerCam.SetActive(true);
+        crow.SetActive(false);
     }
 
     void Update()
@@ -45,29 +54,35 @@ public class CharacterSwitcher : MonoBehaviour
 
     void SwitchToCrow()
     {
-        player.SetActive(false);
-        crow.SetActive(true);
-        crow.transform.position = player.transform.position; 
+        SetActivePlayers(false);
+        crow.transform.position = crowTarget.position; 
         isPlayerActive = false;
+        
         GameUIController.Instance.SetInteractive(false, "Switch", sprite);
         GameUIController.Instance.crosshair.SetActive(false);
     }
 
     void SwitchToPlayer()
     {
-        crow.SetActive(false);
-        player.SetActive(true);
-        player.transform.position = crow.transform.position; 
+        SetActivePlayers(true);
+        player.transform.position = playerTarget.position; 
         isPlayerActive = true;
         GameUIController.Instance.SetInteractive(false, "Switch", sprite);
         GameUIController.Instance.crosshair.SetActive(true);
     }
 
-    // Optional: Visualize the switch distance in the editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, switchDistance);
+    }
+
+    void SetActivePlayers(bool state)
+    {
+        player.SetActive(state);
+        playerCam.SetActive(state);
+        crow.SetActive(!state);
+        crowCam.SetActive(!state);
     }
 
     private void OnTriggerEnter(Collider other)
