@@ -6,13 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Fly_Anim.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Fly_Anim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Down.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Down.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Down.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Down.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Idle1_Anim.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Idle1_Anim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga 1.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga 1.controller.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Move_Anim.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Move_Anim.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Up.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Up.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Up.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Up.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/example.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/example.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/karga.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CharacterSwitcher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +136,7 @@
       <workItem from="1749759052575" duration="4633000" />
       <workItem from="1749809343076" duration="1207000" />
       <workItem from="1749898895600" duration="8691000" />
-      <workItem from="1749933334265" duration="594000" />
+      <workItem from="1749933334265" duration="4527000" />
     </task>
     <servers />
   </component>

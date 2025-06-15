@@ -1,25 +1,20 @@
 using UnityEngine;
 
-public class CrowCamera : MonoBehaviour
+public class SmoothBirdCamera : MonoBehaviour
 {
-    [Header("Target")]
-    public Transform target;
-    
-    [Header("Settings")]
-    [SerializeField] private Vector3 offset = new Vector3(0, 2f, -5f);
-    [SerializeField] private float followSpeed = 5f;
-    [SerializeField] private float rotationSpeed = 3f;
+    public Transform target; // Karga transformu
+    public Vector3 offset = new Vector3(0, 2f, -5f); // Kamera konumu
+    public float smoothness = 5f; // Yumuşaklık (5-10 arası ideal)
 
     void LateUpdate()
     {
-        if (target == null) return;
+        // 1. Hedef pozisyonu hesapla (kargayla birlikte dönecek şekilde)
+        Vector3 targetPosition = target.position + target.rotation * offset;
         
-        // Pozisyon takibi
-        Vector3 targetPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+        // 2. Yumuşak geçiş uygula
+        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothness * Time.deltaTime);
         
-        // Rotasyon takibi (hedefe bakış)
-        Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        // 3. Kargaya doğru bak
+        transform.LookAt(target);
     }
 }

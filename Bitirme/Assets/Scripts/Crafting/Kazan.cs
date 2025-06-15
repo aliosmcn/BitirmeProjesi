@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Kazan : MonoBehaviour
@@ -22,6 +23,9 @@ public class Kazan : MonoBehaviour
     }
 
     #endregion Singleton
+
+    [Header("UI")]
+    [SerializeField] private GameObject directiveUI;
 
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private List<Interactable> items;
