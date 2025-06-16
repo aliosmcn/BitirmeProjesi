@@ -316,6 +316,7 @@ MonoBehaviour:
   onOrderCorrect: {fileID: 11400000, guid: cfaecb57d4682344a8ae99951cccb47c, type: 2}
   onOrderFail: {fileID: 11400000, guid: dc31fb5b4c6b6e34eb33402ca8dd2f14, type: 2}
   onReverseTime: {fileID: 0}
+  onClickGate: {fileID: 0}
   Orders:
   - {fileID: 11400000, guid: 0aee52eb33b765843b2600f4742f4161, type: 2}
   - {fileID: 11400000, guid: bfab18ed582727546ab505fefe1a73b3, type: 2}
@@ -324,6 +325,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 733c7b4519d769647b6c47065cb68c7d, type: 2}
   - {fileID: 11400000, guid: eb6d8666b83010545964549bba2c58fb, type: 2}
   canReverseTime: 0
+  isDayStarted: 0
 --- !u!4 &220899011
 Transform:
   m_ObjectHideFlags: 0
@@ -1782,6 +1784,8 @@ MonoBehaviour:
   onRightClickPressed: {fileID: 11400000, guid: 3c23be3526e11cf4aaf44efa484c1926, type: 2}
   onLeftClickPressed: {fileID: 11400000, guid: 8455b39ad250d9640a413a251ed37886, type: 2}
   onLookingItem: {fileID: 11400000, guid: 0bde805f88392a84dbb22d432b94ecb3, type: 2}
+  onClickGate: {fileID: 0}
+  onDayFinished: {fileID: 0}
   rayDistance: 2.2
   holdPoint: {fileID: 1209770503}
   moveTime: 0.2
