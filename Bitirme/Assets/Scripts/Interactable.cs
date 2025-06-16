@@ -8,16 +8,6 @@ public class Interactable : MonoBehaviour
     private Outline outline;
     private Canvas canvas;
     
-    [SerializeField] private ItemSO itemData;
-
-    public ItemSO ItemData
-    {
-        get
-        {
-            return itemData;
-        }
-    }
-    
     private void Awake()
     {
         TryGetComponent(out Outline outl);

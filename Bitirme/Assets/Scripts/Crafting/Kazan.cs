@@ -25,7 +25,7 @@ public class Kazan : MonoBehaviour
     #endregion Singleton
 
     [SerializeField] private List<CraftingRecipe> recipes;
-    [SerializeField] private List<Interactable> items;
+    [SerializeField] private List<Item> items;
 
     [SerializeField] private Transform placePoint, spawnPoint;
     
@@ -48,7 +48,7 @@ public class Kazan : MonoBehaviour
         EventManager.OnMixing -= Mix;
     }
 
-    public void PlaceObject(Interactable obj)
+    public void PlaceObject(Item obj)
     {
         items.Add(obj);
         if (items.Count == 3) alabiliyorMu = false;

@@ -75,8 +75,8 @@ public class InteractSystem : MonoBehaviour
                 onLookingItem.Raise(null);
                 currentHover = hover;
                 if (currentHover) currentHover.OutlineCanvasState(true);
-                if (hover)
-                    onLookingItem.Raise(currentHover.ItemData);
+                //if (hover)
+                    //onLookingItem.Raise(currentHover.ItemData);
             }
 
             if (holdObject) holdObject.SetPreviewState(true, hit.point);
@@ -112,7 +112,7 @@ public class InteractSystem : MonoBehaviour
                 {
                     currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject,
                     Kazan.Instance.GetTransform().transform.position, false));
-                    Kazan.Instance.PlaceObject(holdObject);
+                    //Kazan.Instance.PlaceObject(holdObject);
                     return;
                 }
                 if (kazan && !kazan.alabiliyorMu || kazan && kazan.alabiliyorMu && Kepce.Instance.TryGetComponent(out Animator animator2) && animator2.GetBool("Mixing")) 
