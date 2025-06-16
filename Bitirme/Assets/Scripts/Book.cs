@@ -16,13 +16,18 @@ public class Book : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        canNext = true;
     }
 
     #endregion Singleton
 
+    public bool canNext = true;
+    public bool canPrevious = false;
+
     [SerializeField] private GameObject bookUI;
     
     private Animator animator;
+
     
     void Start()
     {
@@ -31,12 +36,27 @@ public class Book : MonoBehaviour
 
     public void NextPage()
     {
-        animator.SetTrigger("Sonraki");
+        Debug.Log("ileri " + canNext);
+        if (canNext)
+            animator.SetTrigger("Sonraki");
+            
     }
 
     public void PreviousPage()
     {
-        animator.SetTrigger("Onceki");
+        Debug.Log("geri " + canPrevious);
+        if (canPrevious)
+            animator.SetTrigger("Onceki");
+            
+        
     }
-    
+
+    public void SetCanNext()
+    {
+        canNext = !canNext;
+    }
+    public void SetCanPrevious()
+    {
+        canPrevious = !canPrevious;
+    }
 }
