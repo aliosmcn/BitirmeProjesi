@@ -29,16 +29,16 @@ public class InteractSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        onEPressed.AddListener(PickPlaceDrop);
+        onEPressed.AddListener(E_Button);
         onLeftClickPressed.AddListener(LeftClick);
-        onRightClickPressed.AddListener(ClearKazan);
+        onRightClickPressed.AddListener(RightClick);
     }
     
     private void OnDisable()
     {
-        onEPressed.RemoveListener(PickPlaceDrop);
+        onEPressed.RemoveListener(E_Button);
         onLeftClickPressed.RemoveListener(LeftClick);
-        onRightClickPressed.RemoveListener(ClearKazan);
+        onRightClickPressed.RemoveListener(RightClick);
         
         if (currentHover) currentHover.OutlineCanvasState(false);
         if (currentRoutine != null) StopCoroutine(currentRoutine);
@@ -96,7 +96,7 @@ public class InteractSystem : MonoBehaviour
         }
     }
 
-    private void PickPlaceDrop()
+    private void E_Button()
     {
         if (currentRoutine != null) return;
         
@@ -149,27 +149,34 @@ public class InteractSystem : MonoBehaviour
         
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.CompareTag("OpenClose"))
+            if (hit.collider.CompareTag("Book"))
+            {
+                Book.Instance.NextPage();
+            }
+            else if (hit.collider.CompareTag("OpenClose"))
             {
                 onClickGate.Raise();
             }
-            if (hit.collider.TryGetComponent(out Kazan kazan) && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
+            else if (hit.collider.TryGetComponent(out Kazan kazan) && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
             {
                 Kazan.Instance.Mix();
             }
         }
     }
 
-    private void ClearKazan()
+    private void RightClick()
     {
-        if (currentRoutine != null) return;
-        if (holdObject) return;
-        if (Kepce.Instance.TryGetComponent(out Animator animator) && animator.GetBool("Mixing")) return;
-        
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.TryGetComponent(out Kazan kazan))
+            if (hit.collider.CompareTag("Book"))
             {
+                Book.Instance.PreviousPage();
+            }
+            else if (hit.collider.TryGetComponent(out Kazan kazan))
+            {
+                if (currentRoutine != null) return;
+                if (holdObject) return;
+                if (Kepce.Instance.TryGetComponent(out Animator animator) && animator.GetBool("Mixing")) return;
                 Kazan.Instance.ClearItems();
             }
         }

@@ -6,71 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/CharacterEvents.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/CharacterEvents/onSwitchCharacter.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/CharacterEvents/onSwitchCharacter.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/CharacterEvents/onSwitchCrow.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/CharacterEvents/onSwitchCrow.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onCtrlPressed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onCtrlPressed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onEPressed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onEPressed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onLeftClickPressed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onLeftClickPressed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onRightClickPressed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onRightClickPressed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onSpacePressed.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InputEvents/onSpacePressed.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InteractableEvents.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InteractableEvents/onLookingItem.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/InteractableEvents/onLookingItem.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font/SEGOEPR.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font/SEGOEPR.TTF.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font/SEGOEPRB.TTF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font/SEGOEPRB.TTF.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font/WDXLLubrifontJPN-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Font/WDXLLubrifontJPN-Regular.ttf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Group 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Group 1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/E_Button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/E_Button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Left_Button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Left_Button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Life_Bar_Empty.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Life_Bar_Empty.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Life_Bar_Full.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Life_Bar_Full.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Life_Stone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Life_Stone.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Main_Menu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Main_Menu.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Main_Menu_Active_Button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Main_Menu_Active_Button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Main_Menu_InactiveButton.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Main_Menu_InactiveButton.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller/HayatTaşı.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller/HayatTaşı.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller/MainMenu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller/MainMenu.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller/OyunEkrani.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/OrnekGorseller/OyunEkrani.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Right_Button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/Right_Button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/TAB_Button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/UI/TAB_Button.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/cross.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/cross.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
