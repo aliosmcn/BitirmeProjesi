@@ -43,6 +43,7 @@ public class Switcher : MonoBehaviour
             if (isPlayerActive && distanceToPlayer <= switchDistance)
             {
                 SwitchToCrow();
+                onSwitchCrow.Raise();
             }
             // If crow is active and within range, switch to player
             else if (!isPlayerActive && distanceToCrow <= switchDistance)

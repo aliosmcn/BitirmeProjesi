@@ -282,6 +282,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152504885}
   m_CullTransparentMesh: 1
+--- !u!1 &220899009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 220899011}
+  - component: {fileID: 220899010}
+  m_Layer: 0
+  m_Name: OrderSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &220899010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220899009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8045b0b23672fbd438d68dbadf50c032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDayStarted: {fileID: 11400000, guid: 8e38c1bd553a67d4ca0bc5620fdd74ab, type: 2}
+  onDayFinished: {fileID: 11400000, guid: 6beb385418f45794e9d96525d03b3a1a, type: 2}
+  onOrderCorrect: {fileID: 11400000, guid: cfaecb57d4682344a8ae99951cccb47c, type: 2}
+  onOrderFail: {fileID: 11400000, guid: dc31fb5b4c6b6e34eb33402ca8dd2f14, type: 2}
+  onReverseTime: {fileID: 0}
+  Orders:
+  - {fileID: 11400000, guid: 0aee52eb33b765843b2600f4742f4161, type: 2}
+  - {fileID: 11400000, guid: bfab18ed582727546ab505fefe1a73b3, type: 2}
+  - {fileID: 11400000, guid: 1a1926128b1a3244280446fd2544557a, type: 2}
+  - {fileID: 11400000, guid: b63444fcd31221940b262482ca630ec2, type: 2}
+  - {fileID: 11400000, guid: 733c7b4519d769647b6c47065cb68c7d, type: 2}
+  - {fileID: 11400000, guid: eb6d8666b83010545964549bba2c58fb, type: 2}
+  canReverseTime: 0
+--- !u!4 &220899011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220899009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261955929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1351,7 @@ Transform:
   m_GameObject: {fileID: 675715704}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5, y: 0, z: -2.5}
+  m_LocalPosition: {x: -10.5, y: 1.027, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1324,7 +1381,7 @@ MonoBehaviour:
   maxPitchAngle: 30
   bankSpeed: 5
   rotationSpeed: 200
-  verticalSpeed: 3
+  verticalSpeed: 5
   mouseYSensitivity: 0.1
   crowModel: {fileID: 1672672534}
   isFlying: 0
@@ -1674,7 +1731,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onLookingItem: {fileID: 11400000, guid: 0bde805f88392a84dbb22d432b94ecb3, type: 2}
-  bar: {fileID: 868142565}
+  interactiveBar: {fileID: 868142565}
+  kazanBar: {fileID: 1947703354}
+  crowBar: {fileID: 0}
   directiveImg: {fileID: 1389615015}
   directiveText: {fileID: 152504887}
   crosshair: {fileID: 284340958}
@@ -2214,6 +2273,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 721a7d298df4c264eb4fb1056142bfa5, type: 3}
+      propertyPath: m_TagString
+      value: Kazan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2733,7 +2796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb0fa15455cf5a40b5aed594db4b025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directiveUI: {fileID: 0}
   recipes:
   - {fileID: 11400000, guid: f62f2a7bfc58c034bbbeab7398f29e51, type: 2}
   - {fileID: 11400000, guid: 229c4b6d5f1a070438658d5bfd842bd8, type: 2}
@@ -3014,7 +3076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1947703355
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3933,3 +3995,4 @@ SceneRoots:
   - {fileID: 675715706}
   - {fileID: 426690275}
   - {fileID: 1342445609}
+  - {fileID: 220899011}

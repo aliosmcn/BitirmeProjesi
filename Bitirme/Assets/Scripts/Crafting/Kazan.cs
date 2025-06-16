@@ -24,9 +24,6 @@ public class Kazan : MonoBehaviour
 
     #endregion Singleton
 
-    [Header("UI")]
-    [SerializeField] private GameObject directiveUI;
-
     [SerializeField] private List<CraftingRecipe> recipes;
     [SerializeField] private List<Interactable> items;
 

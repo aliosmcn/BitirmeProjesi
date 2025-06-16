@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameUIController : MonoBehaviour
@@ -25,8 +26,11 @@ public class GameUIController : MonoBehaviour
     [Header("Events")]
     [SerializeField] private ItemSOEvent onLookingItem;
     
+    [FormerlySerializedAs("bar")]
     [Header("Directive")]
-    [SerializeField] private GameObject bar;
+    [SerializeField] private GameObject interactiveBar;
+    [SerializeField] private GameObject kazanBar;
+    [SerializeField] private GameObject crowBar;
     [SerializeField] private Image directiveImg;
     [SerializeField] private Text directiveText;
     
@@ -45,28 +49,43 @@ public class GameUIController : MonoBehaviour
 
     private void Start()
     {
-        bar.SetActive(false);
+        interactiveBar.SetActive(false);
     }
 
     public void GetInteractive(ItemSO item)
     {
         if (item)
         {
-            bar.SetActive(true);
+            interactiveBar.SetActive(true);
             directiveText.text = item.ItemID;
             //directiveImg.sprite = item.ItemIcon;
         }
         else
         {
-            bar.SetActive(false);
+            interactiveBar.SetActive(false);
         }
     }
 
     public void SetInteractive(bool state, string text, Sprite img)
     {
-        bar.SetActive(state);
+        interactiveBar.SetActive(state);
         directiveImg.sprite = img;
         directiveText.text = text;
+    }
+
+    public void UpdateUI(string name, bool state)
+    {
+        switch (name)
+        {
+            case "kazan":
+                kazanBar.SetActive(state);
+                break;
+            case "crow":
+                crowBar.SetActive(state);
+                break;
+            default:
+                break;
+        }
     }
     
 }

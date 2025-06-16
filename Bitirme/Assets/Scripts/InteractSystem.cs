@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Serialization;
 
 public class InteractSystem : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class InteractSystem : MonoBehaviour
     [SerializeField] private VoidEvent onRightClickPressed;
     [SerializeField] private VoidEvent onLeftClickPressed;
     [SerializeField] private ItemSOEvent onLookingItem;
+
+    [SerializeField] private VoidEvent onClickGate;
+    [SerializeField] private VoidEvent onDayFinished;
     
     [Header("Settings")]
     [SerializeField] private float rayDistance = 2.2f;
@@ -26,14 +30,14 @@ public class InteractSystem : MonoBehaviour
     private void OnEnable()
     {
         onEPressed.AddListener(PickPlaceDrop);
-        onLeftClickPressed.AddListener(Craft);
+        onLeftClickPressed.AddListener(LeftClick);
         onRightClickPressed.AddListener(ClearKazan);
     }
     
     private void OnDisable()
     {
         onEPressed.RemoveListener(PickPlaceDrop);
-        onLeftClickPressed.RemoveListener(Craft);
+        onLeftClickPressed.RemoveListener(LeftClick);
         onRightClickPressed.RemoveListener(ClearKazan);
         
         if (currentHover) currentHover.OutlineCanvasState(false);
@@ -52,10 +56,19 @@ public class InteractSystem : MonoBehaviour
         if (currentRoutine != null) return;
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, 
-                           rayDistance, interactableLayer))
+                rayDistance, interactableLayer))
         {
             hit.collider.TryGetComponent(out Interactable hover);
-            
+        
+            if (hit.collider.CompareTag("Kazan"))
+            {
+                GameUIController.Instance?.UpdateUI("kazan",true);
+            }
+            else
+            {
+                GameUIController.Instance?.UpdateUI("kazan",false);
+            }
+        
             if (hover != currentHover)
             {
                 if (currentHover) currentHover.OutlineCanvasState(false);
@@ -66,16 +79,19 @@ public class InteractSystem : MonoBehaviour
                     onLookingItem.Raise(currentHover.ItemData);
             }
 
-            if (holdObject) holdObject.SetPreviewState(true, hit.point); }
+            if (holdObject) holdObject.SetPreviewState(true, hit.point);
+        }
         else
         {
+            GameUIController.Instance?.UpdateUI("kazan",false);
+        
             if (currentHover)
             {
                 currentHover.OutlineCanvasState(false);
                 currentHover = null;
                 onLookingItem.Raise(null);
             }
-            
+        
             if (holdObject) holdObject.SetPreviewState(false);
         }
     }
@@ -125,7 +141,7 @@ public class InteractSystem : MonoBehaviour
         holdObject.SetPreviewState(false);
         holdObject = null;
     }
-    private void Craft()
+    private void LeftClick()
     {
         
         if (currentRoutine != null) return;
@@ -133,6 +149,10 @@ public class InteractSystem : MonoBehaviour
         
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
         {
+            if (hit.collider.CompareTag("OpenClose"))
+            {
+                onClickGate.Raise();
+            }
             if (hit.collider.TryGetComponent(out Kazan kazan) && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
             {
                 Kazan.Instance.Mix();

@@ -38,8 +38,6 @@ public class CrowController : MonoBehaviour
 
     private void OnEnable()
     {
-        rb.useGravity = false;
-        Cursor.lockState = CursorLockMode.Locked;
         onSwitchCrow.AddListener(OnSwitch);
     }
 
@@ -50,9 +48,12 @@ public class CrowController : MonoBehaviour
 
     private void OnSwitch()
     {
+        rb.useGravity = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        isFlying = false;
         transform.rotation = Quaternion.identity;
         rb.linearVelocity = Vector3.zero;
-        animator.SetTrigger("Hit");
+        GameUIController.Instance?.UpdateUI("crow",true);
     }
 
     void Update()
@@ -83,6 +84,7 @@ public class CrowController : MonoBehaviour
 
     void StartFlying()
     {
+        GameUIController.Instance?.UpdateUI("crow",false);
         rb.linearVelocity = transform.forward * minFlightSpeed;
         isFlying = true;
         animator.SetTrigger("Jump");
