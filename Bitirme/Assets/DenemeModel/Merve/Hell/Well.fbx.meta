@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: f81cf7172a71c2f41bd3ce7edc3f3987
+guid: 7cdf7a9aa546eed4aa726bf8f9722373
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: M_Pazar
-    second: {fileID: 2100000, guid: 6b20fcee87042f647a404838c19db96a, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,7 +33,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1.3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -93,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 0.012999999
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
