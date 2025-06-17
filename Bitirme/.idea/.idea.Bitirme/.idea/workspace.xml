@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/FPSCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/FPSCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till/BirdCircle.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till/BirdCircle.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till/FrogCircle.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till/FrogCircle.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till/Yogurt.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Circle&amp;Till/Yogurt.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TillOrCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TillOrCircle.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +136,7 @@
       <workItem from="1749898895600" duration="8691000" />
       <workItem from="1749933334265" duration="4527000" />
       <workItem from="1750004788106" duration="10385000" />
-      <workItem from="1750162080211" duration="8005000" />
+      <workItem from="1750162080211" duration="12686000" />
     </task>
     <servers />
   </component>

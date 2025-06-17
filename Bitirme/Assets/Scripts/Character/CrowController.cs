@@ -3,6 +3,26 @@ using UnityEngine;
 
 public class CrowController : MonoBehaviour
 {
+    #region Singleton
+    private static CrowController instance;
+
+    public static CrowController Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        instance = this;
+        rb = GetComponent<Rigidbody>();
+        animator = crowModel.GetComponent<Animator>();
+    }
+
+    #endregion Singleton
+    
     [Header("Events")] 
     [SerializeField] private ItemSOEvent onLookingItem;
     [SerializeField] private VoidEvent onSwitchCrow;
@@ -22,20 +42,16 @@ public class CrowController : MonoBehaviour
     
     [Header("References")]
     public Transform crowModel;
+    public Transform pence;
     
     private Animator animator;
     private Rigidbody rb;
+    [Header("Fly Settings")]
     public bool isFlying = false;
     public bool isCollided = false;
     private float targetBankAngle = 0f;
     private float targetPitchAngle = 0f;
     private float targetVerticalSpeed = 0f;
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-        animator = crowModel.GetComponent<Animator>();
-    }
 
     private void OnEnable()
     {
@@ -188,6 +204,7 @@ public class CrowController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("item")) return;
         isCollided = true;
         rb.linearVelocity = Vector3.zero;
         animator.SetTrigger("Hit");
