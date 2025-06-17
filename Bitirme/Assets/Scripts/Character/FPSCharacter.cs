@@ -5,7 +5,6 @@ public class FPSCharacter : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float walkSpeed = 5f;
-    [SerializeField] private float jumpForce = 7f;
     [SerializeField] private float gravity = -15f;
 
     [Header("Ground Check")]
@@ -34,7 +33,15 @@ public class FPSCharacter : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(walkSpeed * Time.deltaTime * move);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            controller.Move(walkSpeed * 2f * Time.deltaTime * move);
+        }
+        else
+        {
+            controller.Move(walkSpeed * Time.deltaTime * move);
+        }
+        
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
