@@ -36,7 +36,6 @@ public class Book : MonoBehaviour
 
     public void NextPage()
     {
-        Debug.Log("ileri " + canNext);
         if (canNext)
             animator.SetTrigger("Sonraki");
             
@@ -44,7 +43,6 @@ public class Book : MonoBehaviour
 
     public void PreviousPage()
     {
-        Debug.Log("geri " + canPrevious);
         if (canPrevious)
             animator.SetTrigger("Onceki");
             

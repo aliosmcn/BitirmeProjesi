@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Mavi
   m_EditorClassIdentifier: 
   itemId: mavi
-  UIText: for Pick/Drop
-  UIImage: {fileID: 0}
+  UIText: PICK/DROP
+  UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
   prefab: {fileID: 7232688516146282158, guid: a30d18c0e84127148a1c409520ffe5dd, type: 3}

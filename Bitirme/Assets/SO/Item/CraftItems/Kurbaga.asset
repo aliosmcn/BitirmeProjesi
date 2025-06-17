@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
-  m_Name: GriMantar
+  m_Name: Kurbaga
   m_EditorClassIdentifier: 
-  itemId: griMantar
-  UIText: for Pick/Drop
-  UIImage: {fileID: 0}
-  prefab: {fileID: 3226775171273556990, guid: 539c41bba37b8eb408160516728159bc, type: 3}
+  itemId: kurbaga
+  UIText: PICK/DROP
+  UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
+  prefab: {fileID: 1431864003956824042, guid: ec92fc691737c4145af15b0da35fc0a6, type: 3}

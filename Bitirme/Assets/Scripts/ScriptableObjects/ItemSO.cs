@@ -16,7 +16,7 @@ public class ItemSO : ScriptableObject
     }
 
     [SerializeField] public string UIText;
-    [SerializeField] private Sprite UIImage;
+    [SerializeField] public Sprite UIImage;
 
     public Sprite ItemIcon
     {

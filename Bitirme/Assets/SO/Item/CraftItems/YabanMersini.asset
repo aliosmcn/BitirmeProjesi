@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: YabanMersini
   m_EditorClassIdentifier: 
   itemId: yabanMersini
-  UIText: for Pick/Drop
-  UIImage: {fileID: 0}
+  UIText: PICK/DROP
+  UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
   prefab: {fileID: 1012171359798843921, guid: 8daa24590f097ca4798914914e1310a9, type: 3}

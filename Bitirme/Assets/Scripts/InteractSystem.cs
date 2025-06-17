@@ -40,7 +40,7 @@ public class InteractSystem : MonoBehaviour
         onLeftClickPressed.RemoveListener(LeftClick);
         onRightClickPressed.RemoveListener(RightClick);
         
-        if (currentHover) currentHover.OutlineCanvasState(false);
+        if (currentHover) currentHover.OutlineState(false);
         if (currentRoutine != null) StopCoroutine(currentRoutine);
     }
 
@@ -60,34 +60,25 @@ public class InteractSystem : MonoBehaviour
         {
             hit.collider.TryGetComponent(out Interactable hover);
         
-            if (hit.collider.CompareTag("Kazan"))
-            {
-                GameUIController.Instance?.UpdateUI("kazan",true);
-            }
-            else
-            {
-                GameUIController.Instance?.UpdateUI("kazan",false);
-            }
-        
             if (hover != currentHover)
             {
-                if (currentHover) currentHover.OutlineCanvasState(false);
+                if (currentHover) currentHover.OutlineState(false);
                 onLookingItem.Raise(null);
                 currentHover = hover;
-                if (currentHover) currentHover.OutlineCanvasState(true);
-                //if (hover)
-                    //onLookingItem.Raise(currentHover.ItemData);
+                if (currentHover) currentHover.OutlineState(true);
+                if (hover)
+                    onLookingItem.Raise(currentHover.ItemData);
             }
 
             if (holdObject) holdObject.SetPreviewState(true, hit.point);
         }
         else
         {
-            GameUIController.Instance?.UpdateUI("kazan",false);
+            //GameUIController.Instance?.UpdateUI("kazan",false);
         
             if (currentHover)
             {
-                currentHover.OutlineCanvasState(false);
+                currentHover.OutlineState(false);
                 currentHover = null;
                 onLookingItem.Raise(null);
             }
@@ -112,7 +103,7 @@ public class InteractSystem : MonoBehaviour
                 {
                     currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject,
                     Kazan.Instance.GetTransform().transform.position, false));
-                    //Kazan.Instance.PlaceObject(holdObject);
+                    Kazan.Instance.PlaceObject(holdObject);
                     return;
                 }
                 if (kazan && !kazan.alabiliyorMu || kazan && kazan.alabiliyorMu && Kepce.Instance.TryGetComponent(out Animator animator2) && animator2.GetBool("Mixing")) 
@@ -184,7 +175,7 @@ public class InteractSystem : MonoBehaviour
 
     private IEnumerator MoveObjectRoutine(Interactable obj, Vector3 targetPos, bool pickup)
     {
-        if (currentHover) currentHover.OutlineCanvasState(false);
+        if (currentHover) currentHover.OutlineState(false);
         obj.SetPreviewState(false);
         
         SetPhysicsState(obj, false);

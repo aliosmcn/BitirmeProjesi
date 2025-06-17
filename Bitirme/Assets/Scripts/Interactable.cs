@@ -6,21 +6,32 @@ public class Interactable : MonoBehaviour
     public GameObject previewObject;
     
     private Outline outline;
-    private Canvas canvas;
     
-    private void Awake()
+    [SerializeField] public ItemSO itemData;
+
+    public ItemSO ItemData
     {
-        TryGetComponent(out Outline outl);
-        if (outl) outline = outl;
-        canvas = GetComponentInChildren<Canvas>();
-        OutlineCanvasState(false);
-        SetPreviewState(false);
+        get
+        {
+            return itemData;
+        }
     }
 
-    public void OutlineCanvasState(bool state)
+
+    private void Awake()
+    {
+        if (this.CompareTag("item"))
+        {
+            TryGetComponent(out Outline outl);
+            if (outl) outline = outl;
+            OutlineState(false);
+            SetPreviewState(false);
+        }
+    }
+
+    public void OutlineState(bool state)
     {
         if (outline) outline.enabled = state;
-        if (canvas) canvas.enabled = state;
     }
 
 

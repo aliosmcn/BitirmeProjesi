@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
-  m_Name: Mor
+  m_Name: DortMantar
   m_EditorClassIdentifier: 
-  itemId: mor
+  itemId: dortMantar
   UIText: PICK/DROP
   UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
-  prefab: {fileID: 6971702723727244366, guid: 0e61b0515fa907544bca410529aef2df, type: 3}
+  prefab: {fileID: 0}

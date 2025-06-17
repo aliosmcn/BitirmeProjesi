@@ -29,10 +29,12 @@ public class GameUIController : MonoBehaviour
     [FormerlySerializedAs("bar")]
     [Header("Directive")]
     [SerializeField] private GameObject interactiveBar;
-    [SerializeField] private GameObject kazanBar;
-    [SerializeField] private GameObject crowBar;
     [SerializeField] private Image directiveImg;
     [SerializeField] private Text directiveText;
+    
+    [SerializeField] private GameObject kazanBar;
+    [SerializeField] private GameObject crowBar;
+    [SerializeField] private GameObject bookBar;
     
     public GameObject crosshair;
 
@@ -56,21 +58,49 @@ public class GameUIController : MonoBehaviour
     {
         if (item)
         {
-            interactiveBar.SetActive(true);
-            directiveText.text = item.ItemID;
-            //directiveImg.sprite = item.ItemIcon;
+            if (item.prefab && item.prefab.gameObject.CompareTag("item"))
+            {
+                interactiveBar.SetActive(true);
+                directiveText.text = item.UIText;
+                directiveImg.sprite = item.ItemIcon;
+            }
+            else
+            {
+                switch (item.ItemID)
+                {
+                    case "Kazan":
+                        kazanBar.SetActive(true);
+                        break;
+                    case "Book":
+                        bookBar.SetActive(true);
+                        break;
+                    default:
+                        kazanBar.SetActive(false);
+                        bookBar.SetActive(false);
+                        crowBar.SetActive(false);
+                        break;
+                }
+                
+            }
         }
         else
         {
             interactiveBar.SetActive(false);
+            kazanBar.SetActive(false);
+            bookBar.SetActive(false);
+            crowBar.SetActive(false);
         }
     }
 
     public void SetInteractive(bool state, string text, Sprite img)
     {
-        interactiveBar.SetActive(state);
-        directiveImg.sprite = img;
-        directiveText.text = text;
+        if (img)
+        {
+            interactiveBar.SetActive(state);
+            directiveImg.sprite = img;
+            directiveText.text = text;
+        }
+        
     }
 
     public void UpdateUI(string name, bool state)
@@ -81,7 +111,7 @@ public class GameUIController : MonoBehaviour
                 kazanBar.SetActive(state);
                 break;
             case "crow":
-                crowBar.SetActive(state);
+                //crowBar.SetActive(state);
                 break;
             default:
                 break;

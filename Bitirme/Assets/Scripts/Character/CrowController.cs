@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class CrowController : MonoBehaviour
 {
-    [Header("Events")]
+    [Header("Events")] 
+    [SerializeField] private ItemSOEvent onLookingItem;
     [SerializeField] private VoidEvent onSwitchCrow;
     [SerializeField] private VoidEvent onSwitchCharacter;
     
@@ -53,20 +54,23 @@ public class CrowController : MonoBehaviour
         isFlying = false;
         transform.rotation = Quaternion.identity;
         rb.linearVelocity = Vector3.zero;
-        GameUIController.Instance?.UpdateUI("crow",true);
+        GameUIController.Instance?.UpdateUI("crow",false);
+        if (TryGetComponent(out Interactable interact)) onLookingItem.Raise(interact.itemData);
     }
 
     void Update()
     {
         // Çarpışma sonrası W tuşu ile yeniden hareket
-        if (isCollided && Input.GetKeyDown(KeyCode.W))
+        if (isCollided && Input.GetKeyDown(KeyCode.Space))
         {
+            onLookingItem.Raise(null);
             ResetAfterCollision();
         }
 
         // Başlangıç hareketi
         if (!isFlying && Input.GetKeyDown(KeyCode.Space))
         {
+            onLookingItem.Raise(null);
             StartFlying();
         }
 
@@ -84,7 +88,7 @@ public class CrowController : MonoBehaviour
 
     void StartFlying()
     {
-        GameUIController.Instance?.UpdateUI("crow",false);
+        onLookingItem.Raise(null);
         rb.linearVelocity = transform.forward * minFlightSpeed;
         isFlying = true;
         animator.SetTrigger("Jump");
@@ -185,7 +189,6 @@ public class CrowController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("carpti");
         isCollided = true;
         rb.linearVelocity = Vector3.zero;
         animator.SetTrigger("Hit");

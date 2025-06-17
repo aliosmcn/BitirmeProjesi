@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Pembe
   m_EditorClassIdentifier: 
   itemId: pembe
-  UIText: for Pick/Drop
-  UIImage: {fileID: 0}
+  UIText: PICK/DROP
+  UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
   prefab: {fileID: 2773878179602814136, guid: e928e61726b9bf6449e2860b97d893e4, type: 3}

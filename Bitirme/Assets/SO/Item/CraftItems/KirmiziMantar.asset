@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26bacb73edf38974bb75ce1e7a58fa74, type: 3}
-  m_Name: Yarasa
+  m_Name: KirmiziMantar
   m_EditorClassIdentifier: 
-  itemId: yarasa
-  UIText: for Pick/Drop
-  UIImage: {fileID: 0}
-  prefab: {fileID: 949357157409400440, guid: 63bb71e3a2bded848a133241063d038e, type: 3}
+  itemId: kirmiziMantar
+  UIText: PICK/DROP
+  UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
+  prefab: {fileID: 6249745842939447591, guid: 28aa89221404a874d89adcd7ebdefe7a, type: 3}

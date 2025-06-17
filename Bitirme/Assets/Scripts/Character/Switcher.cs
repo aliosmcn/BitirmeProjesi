@@ -59,7 +59,7 @@ public class Switcher : MonoBehaviour
         crow.transform.position = crowTarget.position; 
         isPlayerActive = false;
         
-        GameUIController.Instance.SetInteractive(false, "Switch", sprite);
+        GameUIController.Instance.SetInteractive(false, "SWITCH", sprite);
         GameUIController.Instance.crosshair.SetActive(false);
     }
 
@@ -68,7 +68,7 @@ public class Switcher : MonoBehaviour
         SetActivePlayers(true);
         player.transform.position = playerTarget.position; 
         isPlayerActive = true;
-        GameUIController.Instance.SetInteractive(false, "Switch", sprite);
+        GameUIController.Instance.SetInteractive(false, "SWITCH", sprite);
         GameUIController.Instance.crosshair.SetActive(true);
     }
 
@@ -90,7 +90,7 @@ public class Switcher : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameUIController.Instance.SetInteractive(true, "Switch", sprite);
+            GameUIController.Instance.SetInteractive(true, "SWITCH", sprite);
         }
     }
 
@@ -98,7 +98,7 @@ public class Switcher : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameUIController.Instance.SetInteractive(false, "Switch", sprite);
+            GameUIController.Instance.SetInteractive(false, "SWITCH", sprite);
         }
     }
 }
