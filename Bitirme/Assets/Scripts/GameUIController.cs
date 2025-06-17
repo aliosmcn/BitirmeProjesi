@@ -74,6 +74,9 @@ public class GameUIController : MonoBehaviour
                     case "Book":
                         bookBar.SetActive(true);
                         break;
+                    case "Crow":
+                        crowBar.SetActive(true);
+                        break;
                     default:
                         kazanBar.SetActive(false);
                         bookBar.SetActive(false);
@@ -100,22 +103,12 @@ public class GameUIController : MonoBehaviour
             directiveImg.sprite = img;
             directiveText.text = text;
         }
+        else
+        {
+            interactiveBar.SetActive(false);
+        }
         
     }
 
-    public void UpdateUI(string name, bool state)
-    {
-        switch (name)
-        {
-            case "kazan":
-                kazanBar.SetActive(state);
-                break;
-            case "crow":
-                //crowBar.SetActive(state);
-                break;
-            default:
-                break;
-        }
-    }
     
 }

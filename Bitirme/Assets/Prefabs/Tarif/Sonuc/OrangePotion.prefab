@@ -113,7 +113,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7df77f2413b94e9429ba1ac88043cac2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.22
+      value: -4.0698037
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df77f2413b94e9429ba1ac88043cac2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -121,7 +121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df77f2413b94e9429ba1ac88043cac2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.4861035
+      value: -1.3929904
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7df77f2413b94e9429ba1ac88043cac2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7df77f2413b94e9429ba1ac88043cac2, type: 3}
       propertyPath: m_TagString
-      value: GameController
+      value: item
       objectReference: {fileID: 0}
     - target: {fileID: 3079803709257854793, guid: 7df77f2413b94e9429ba1ac88043cac2, type: 3}
       propertyPath: m_DirtyAABB

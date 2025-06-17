@@ -54,7 +54,6 @@ public class CrowController : MonoBehaviour
         isFlying = false;
         transform.rotation = Quaternion.identity;
         rb.linearVelocity = Vector3.zero;
-        GameUIController.Instance?.UpdateUI("crow",false);
         if (TryGetComponent(out Interactable interact)) onLookingItem.Raise(interact.itemData);
     }
 

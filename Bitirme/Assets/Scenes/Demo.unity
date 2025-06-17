@@ -1200,7 +1200,7 @@ MonoBehaviour:
   minFlightSpeed: 2
   maxFlightSpeed: 7
   maxBankAngle: 45
-  maxPitchAngle: 30
+  maxPitchAngle: 40
   bankSpeed: 5
   rotationSpeed: 200
   verticalSpeed: 5
@@ -1392,7 +1392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721152597660614360, guid: ae27b4fea33178546830171704a02fec, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 322
+      value: 562
       objectReference: {fileID: 0}
     - target: {fileID: 721152597660614360, guid: ae27b4fea33178546830171704a02fec, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1690,8 +1690,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.45962858, y: 0.18049663, z: 0.65205276}
-  m_Center: {x: -0.0053679943, y: 0.019682407, z: -0.0034564137}
+  m_Size: {x: 0.59999514, y: 0.18049663, z: 0.65205276}
+  m_Center: {x: 0.06481528, y: 0.019682407, z: -0.0034564137}
 --- !u!114 &896121952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,13 +1899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
-  jumpForce: 1
-  gravity: -15
-  groundCheck: {fileID: 1051694701}
-  groundDistance: 1.2
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!143 &1051694697
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3483,10 +3476,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BluePotion
       objectReference: {fileID: 0}
-    - target: {fileID: 7232688516146282158, guid: a30d18c0e84127148a1c409520ffe5dd, type: 3}
-      propertyPath: m_TagString
-      value: item
-      objectReference: {fileID: 0}
     - target: {fileID: 8004158013038552084, guid: a30d18c0e84127148a1c409520ffe5dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.721804
@@ -3811,10 +3800,6 @@ PrefabInstance:
     - target: {fileID: 7967226227053300421, guid: d2b5a045d7a7c6a42bedd82e155e8d70, type: 3}
       propertyPath: m_Name
       value: OrangePotion
-      objectReference: {fileID: 0}
-    - target: {fileID: 7967226227053300421, guid: d2b5a045d7a7c6a42bedd82e155e8d70, type: 3}
-      propertyPath: m_TagString
-      value: item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

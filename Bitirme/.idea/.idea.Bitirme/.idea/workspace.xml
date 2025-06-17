@@ -6,40 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/karga/Karga.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/pazar/Pazar.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/pazar/Pazar.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Domates.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Domates.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/DortMantar.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/DortMantar.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/GriMantar.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/GriMantar.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/KirmiziMantar.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/KirmiziMantar.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Kurbaga.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Kurbaga.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/KusTuyu.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/KusTuyu.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Papatya.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Papatya.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/YabanMersini.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/YabanMersini.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yarasa.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yarasa.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yogurt.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Yogurt.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Blue.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Book.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Character/Switcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Crafting/Kazan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Item.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ItemSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ItemSO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +129,7 @@
       <workItem from="1749898895600" duration="8691000" />
       <workItem from="1749933334265" duration="4527000" />
       <workItem from="1750004788106" duration="10385000" />
-      <workItem from="1750162080211" duration="3710000" />
+      <workItem from="1750162080211" duration="5738000" />
     </task>
     <servers />
   </component>

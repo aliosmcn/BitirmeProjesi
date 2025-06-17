@@ -74,8 +74,6 @@ public class InteractSystem : MonoBehaviour
         }
         else
         {
-            //GameUIController.Instance?.UpdateUI("kazan",false);
-        
             if (currentHover)
             {
                 currentHover.OutlineState(false);
