@@ -38,17 +38,15 @@ public class Book : MonoBehaviour
     {
         if (canNext)
             animator.SetTrigger("Sonraki");
-            
     }
 
     public void PreviousPage()
     {
         if (canPrevious)
             animator.SetTrigger("Onceki");
-            
-        
     }
 
+    //AnimationEvents
     public void SetCanNext()
     {
         canNext = !canNext;
