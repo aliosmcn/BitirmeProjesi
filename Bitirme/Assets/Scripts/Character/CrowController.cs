@@ -29,16 +29,17 @@ public class CrowController : MonoBehaviour
     [SerializeField] private VoidEvent onSwitchCharacter;
     
     [Header("Movement Settings")]
-    public float acceleration = 2f;
-    public float deceleration = 2f;
-    public float minFlightSpeed = 0f;
+    public float acceleration = 1f;
+    public float deceleration = 1f;
+    public float minFlightSpeed = 2f;
     public float maxFlightSpeed = 7f;
     public float maxBankAngle = 45f;
-    public float maxPitchAngle = 30f;
+    public float maxPitchAngle = 40f;
     public float bankSpeed = 5f;
-    public float rotationSpeed = 100f;
-    public float verticalSpeed = 3f;
+    public float rotationSpeed = 200f;
+    public float verticalSpeed = 4f;
     public float mouseYSensitivity = 0.1f;
+    public float verticalConstrain = 8f;
     
     [Header("References")]
     public Transform crowModel;
@@ -171,16 +172,24 @@ public class CrowController : MonoBehaviour
 
     void HandleVertical()
     {
+        if (transform.position.y >= verticalConstrain && Input.GetAxis("Mouse Y") < 0)
+        {
+            targetPitchAngle = 0;
+            targetVerticalSpeed = 0;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+            return;
+        }
+
         float mouseY = -Input.GetAxis("Mouse Y");
         targetPitchAngle = -mouseY * maxPitchAngle;
         targetVerticalSpeed = mouseY * verticalSpeed;
-        
+    
         float currentYVelocity = Mathf.Lerp(
             rb.linearVelocity.y,
             targetVerticalSpeed,
             Time.deltaTime * 5f
         );
-        
+    
         rb.linearVelocity = new Vector3(
             rb.linearVelocity.x,
             currentYVelocity,
