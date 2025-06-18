@@ -51,6 +51,7 @@ MonoBehaviour:
   onOrderFail: {fileID: 11400000, guid: dc31fb5b4c6b6e34eb33402ca8dd2f14, type: 2}
   onReverseTime: {fileID: 11400000, guid: d3566554c9d49ce478f7ddacc2e8e38c, type: 2}
   onClickGate: {fileID: 11400000, guid: daff680947c73e54f986e9eec75acdc1, type: 2}
+  onEnergyChanged: {fileID: 11400000, guid: d33451b200c145e40af889ccb4ae4ed5, type: 2}
   Orders:
   - {fileID: 11400000, guid: 0aee52eb33b765843b2600f4742f4161, type: 2}
   - {fileID: 11400000, guid: bfab18ed582727546ab505fefe1a73b3, type: 2}
@@ -61,6 +62,7 @@ MonoBehaviour:
   customerPos: {fileID: 1816675969150669250}
   canReverseTime: 0
   isDayStarted: 0
+  currentOrder: {fileID: 0}
 --- !u!1001 &2946724731804896508
 PrefabInstance:
   m_ObjectHideFlags: 0
