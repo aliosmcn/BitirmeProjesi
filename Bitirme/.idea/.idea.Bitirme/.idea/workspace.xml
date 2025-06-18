@@ -5,7 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arayuz/Scripts/IntroManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arayuz/Scripts/IntroManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arayuz/Scripts/LoadingScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arayuz/Scripts/LoadingScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Readme.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Materials/OutlineFill.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Materials/OutlineFill.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Materials/OutlineMask.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Materials/OutlineMask.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Shaders/OutlineFill.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Shaders/OutlineFill.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Shaders/OutlineMask.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Resources/Shaders/OutlineMask.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Materials/Plane.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Materials/Plane.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutline/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutlineSettings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Samples/Scenes/QuickOutlineSettings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Scripts/Outline.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Outline/Scripts/Outline.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Circle&amp;Kasa/YogurtKasa.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Circle&amp;Kasa/YogurtKasa.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/DomatesHam.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/DomatesHam.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tarif/KAZAN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tarif/KAZAN.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadingScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewLevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NewLevelDesign.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +59,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Arayuz/Scripts/LoadingScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Arayuz/Scripts/MenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />

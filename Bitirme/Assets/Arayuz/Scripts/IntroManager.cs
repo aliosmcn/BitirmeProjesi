@@ -18,6 +18,6 @@ public class IntroManager : MonoBehaviour {
     }
 
     void OnVideoEnd(VideoPlayer vp) {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
     }
 }
