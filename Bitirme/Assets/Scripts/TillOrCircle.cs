@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class TillOrCircle : MonoBehaviour
 {
+    [Header("Events")] [SerializeField] private IntEvent onEnergyChanged;
+    
     [SerializeField] private Sprite buttonSprite;
     
     [Header("ItemSO")]
@@ -28,6 +30,7 @@ public class TillOrCircle : MonoBehaviour
                 Quaternion.identity,
                 CrowController.Instance.pence
             );
+            onEnergyChanged.Raise(-5);
             SetUI(true);
             SetRbAndCollider(false);
         }

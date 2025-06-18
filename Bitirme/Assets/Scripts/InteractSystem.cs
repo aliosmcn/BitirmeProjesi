@@ -12,9 +12,8 @@ public class InteractSystem : MonoBehaviour
     [SerializeField] private VoidEvent onRightClickPressed;
     [SerializeField] private VoidEvent onLeftClickPressed;
     [SerializeField] private ItemSOEvent onLookingItem;
+    [SerializeField] private IntEvent onEnergyChanged;
 
-    [SerializeField] private VoidEvent onClickGate;
-    [SerializeField] private VoidEvent onDayFinished;
     
     [Header("Settings")]
     [SerializeField] private float rayDistance = 2.2f;
@@ -134,6 +133,7 @@ public class InteractSystem : MonoBehaviour
             GameObject newObject = Instantiate(currentHover.itemData.prefab, till.transform.position, Quaternion.identity);
             newObject.TryGetComponent(out Interactable child);
             currentRoutine = StartCoroutine(MoveObjectRoutine(child, holdPoint.position, true));
+            onEnergyChanged.Raise(-5);
             //KASADAN ALINIYOR
         }
     }

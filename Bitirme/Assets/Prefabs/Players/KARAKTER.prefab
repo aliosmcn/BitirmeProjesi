@@ -153,8 +153,7 @@ MonoBehaviour:
   onRightClickPressed: {fileID: 11400000, guid: 3c23be3526e11cf4aaf44efa484c1926, type: 2}
   onLeftClickPressed: {fileID: 11400000, guid: 8455b39ad250d9640a413a251ed37886, type: 2}
   onLookingItem: {fileID: 11400000, guid: 0bde805f88392a84dbb22d432b94ecb3, type: 2}
-  onClickGate: {fileID: 0}
-  onDayFinished: {fileID: 0}
+  onEnergyChanged: {fileID: 11400000, guid: d33451b200c145e40af889ccb4ae4ed5, type: 2}
   rayDistance: 2.6
   holdPoint: {fileID: 4258950822231318976}
   moveTime: 0.2

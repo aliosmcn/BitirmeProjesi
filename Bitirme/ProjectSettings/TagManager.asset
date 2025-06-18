@@ -10,6 +10,7 @@ TagManager:
   - OpenClose
   - Book
   - Kure
+  - Energy
   layers:
   - Default
   - TransparentFX

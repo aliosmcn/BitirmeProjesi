@@ -26,10 +26,11 @@ public class OrderSystem : MonoBehaviour
     [Header("Events")]
     [SerializeField] private VoidEvent onDayStarted;    
     [SerializeField] private VoidEvent onDayFinished;   
-    [SerializeField] private VoidEvent onOrderCorrect;  //teslim scriptinde raise olacak
-    [SerializeField] private VoidEvent onOrderFail;     //teslim scriptinde raise olacak
-    [SerializeField] private VoidEvent onReverseTime;   //cadi kuresinde raise olacak
+    [SerializeField] private VoidEvent onOrderCorrect;  
+    [SerializeField] private VoidEvent onOrderFail;     
+    [SerializeField] private VoidEvent onReverseTime;   
     [SerializeField] private VoidEvent onClickGate;
+    [SerializeField] private IntEvent onEnergyChanged;
     
     [SerializeField] private List<OrderSO> Orders;
 
@@ -95,6 +96,7 @@ public class OrderSystem : MonoBehaviour
 
     private void CorrectOrder()
     {
+        onEnergyChanged.Raise(25);
         if(DaySystem.Instance.canClose) return;
         
         if (newCustomer.TryGetComponent(out Animator animator))
@@ -113,6 +115,7 @@ public class OrderSystem : MonoBehaviour
 
     private void FailOrder()
     {
+        onEnergyChanged.Raise(-10);
         if (newCustomer.TryGetComponent(out Animator animator))
         {
             animator.SetTrigger("Fail");
