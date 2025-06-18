@@ -16,3 +16,4 @@ MonoBehaviour:
   UIText: PICK/DROP
   UIImage: {fileID: 21300000, guid: 3293e13cd333e404b858eae5f795d2ba, type: 3}
   prefab: {fileID: 551768467534987894, guid: 04df6591755e8424b94092cc5f24c38a, type: 3}
+  isPotion: 1

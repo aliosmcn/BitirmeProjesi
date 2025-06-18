@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
     public GameObject previewObject;
     
     private Outline outline;
+
     
     [SerializeField] public ItemSO itemData;
 

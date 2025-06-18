@@ -49,8 +49,6 @@ public class OrderSystem : MonoBehaviour
         onDayStarted.AddListener(DayStarted);
         onDayFinished.AddListener(DayFinished);
         
-       //onOrderCorrect.AddListener(CorrectOrder);
-        onOrderFail.AddListener(FailOrder);
         onReverseTime.AddListener(ReverseTime);
         onClickGate.AddListener(StartOrEnd);
     }
@@ -60,8 +58,6 @@ public class OrderSystem : MonoBehaviour
         onDayStarted.RemoveListener(DayStarted);
         onDayFinished.RemoveListener(DayFinished);
         
-        //onOrderCorrect.RemoveListener(CorrectOrder);
-        onOrderFail.RemoveListener(FailOrder);
         onReverseTime.RemoveListener(ReverseTime);
         onClickGate.RemoveListener(StartOrEnd);
     }
@@ -69,10 +65,8 @@ public class OrderSystem : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
+        if(Input.GetKeyDown(KeyCode.R))
             CorrectOrder();
-        }
     }
 
     private void StartOrEnd()
@@ -124,11 +118,21 @@ public class OrderSystem : MonoBehaviour
             animator.SetTrigger("Fail");
         }
         
+        onOrderFail.Raise();
         //hayat enerjisi azalacak
         
         canReverseTime = true;
     }
 
+    public void CheckOrder(Interactable result)
+    {
+        if (canReverseTime) return;
+        if (currentOrder && result.itemData == currentOrder.OrderRecipe.result)
+            CorrectOrder();
+        else if (currentOrder && result.itemData != currentOrder.OrderRecipe.result)
+            FailOrder();
+        
+    }
 
     private void CreateNewOrder()
     {
@@ -139,8 +143,9 @@ public class OrderSystem : MonoBehaviour
         //musteri ui aktif olsuns
     }
     
-    private void ReverseTime()
+    public void ReverseTime()
     {
+        if (!canReverseTime) return;
         if (newCustomer.TryGetComponent(out Animator animator))
         {
             animator.SetTrigger("Revive");

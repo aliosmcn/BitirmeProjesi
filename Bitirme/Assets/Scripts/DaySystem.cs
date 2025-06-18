@@ -35,7 +35,7 @@ public class DaySystem : MonoBehaviour
     
     public int correctCount = 0;
 
-    
+    [SerializeField] private Animator animator;
 
     private void Start()
     {
@@ -61,6 +61,7 @@ public class DaySystem : MonoBehaviour
     public void OnOpen()
     {
         Debug.Log("Acildi");
+        animator.SetTrigger("Open");
         isOpen = true;
         canClose = false;
         onDayStarted.Raise();
@@ -70,6 +71,7 @@ public class DaySystem : MonoBehaviour
     {
         Debug.Log("Kapandi");
         if(!canClose) return;
+        animator.SetTrigger("Close");
         correctCount = 0;
         isOpen = false;
         UpdateDay();

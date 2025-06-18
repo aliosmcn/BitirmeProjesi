@@ -28,5 +28,7 @@ public class ItemSO : ScriptableObject
 
     [SerializeField] public GameObject prefab;
 
+    public bool isPotion;
+
 
 }

@@ -97,6 +97,12 @@ public class InteractSystem : MonoBehaviour
             //birakacak yer var
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
             {
+                if (hit.collider.TryGetComponent(out DeliveryTable table))
+                {
+                    DeliveryTable.Instance.SetDeliveryObject(holdObject);
+                    if (holdObject.itemData.isPotion && !table.deliverObject) currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, table.orderPos.position, false));
+                    return;
+                }
                 if (hit.collider.TryGetComponent(out Kazan kazan) && kazan.alabiliyorMu && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
                 {
                     currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject,
@@ -156,6 +162,10 @@ public class InteractSystem : MonoBehaviour
                     if(openClose.canClose)
                         openClose.OnClose();
                 }
+            }
+            else if (hit.collider.CompareTag("Kure"))
+            {
+                OrderSystem.Instance.ReverseTime();
             }
             
         }

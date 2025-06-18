@@ -53,4 +53,9 @@ public class Book : MonoBehaviour
     {
         canPrevious = !canPrevious;
     }
+
+    public void DefaultState()
+    {
+        animator.SetTrigger("BasaDon");
+    }
 }
