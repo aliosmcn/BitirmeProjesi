@@ -5,25 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman/BayilmaW.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hastalar/SickWoman/BayilmaW.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman1/SickWoman1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman1/SickWoman1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman2/SickWoman2.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman2/SickWoman2.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman3/SickWoman3.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman3/SickWoman3.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Red 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Red 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DaySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DaySystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeliveryTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeliveryTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Intro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Intro/Intro.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Intro/Intro.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Intro/IntroManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Intro/IntroManager.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Intro/IntroController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Arayuz/Scripts/LoadingScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />
