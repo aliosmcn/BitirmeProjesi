@@ -23,8 +23,6 @@ public class Book : MonoBehaviour
 
     public bool canNext = true;
     public bool canPrevious = false;
-
-    [SerializeField] private GameObject bookUI;
     
     private Animator animator;
 

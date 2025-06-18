@@ -116,20 +116,19 @@ public class InteractSystem : MonoBehaviour
                 Drop();
 
         }
-        else if (currentHover)
+        else if (currentHover && currentHover.gameObject.CompareTag("item"))
         {
             currentRoutine = StartCoroutine(MoveObjectRoutine(currentHover, holdPoint.position, true)); //PICK
         }
+        else if (currentHover && currentHover.TryGetComponent(out TillOrCircle till))
+        {
+            GameObject newObject = Instantiate(currentHover.itemData.prefab, till.transform.position, Quaternion.identity);
+            newObject.TryGetComponent(out Interactable child);
+            currentRoutine = StartCoroutine(MoveObjectRoutine(child, holdPoint.position, true));
+            //KASADAN ALINIYOR
+        }
     }
 
-    private void Drop()
-    {
-        holdObject.transform.SetParent(null);
-        holdObject.transform.rotation = Quaternion.identity;
-        SetPhysicsState(holdObject, true);
-        holdObject.SetPreviewState(false);
-        holdObject = null;
-    }
     private void LeftClick()
     {
         
@@ -138,18 +137,27 @@ public class InteractSystem : MonoBehaviour
         
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
         {
-            if (hit.collider.CompareTag("Book"))
+            if (hit.collider.CompareTag("Book")) //Kitap
             {
                 Book.Instance.NextPage();
             }
-            else if (hit.collider.CompareTag("OpenClose"))
-            {
-                onClickGate.Raise();
-            }
-            else if (hit.collider.TryGetComponent(out Kazan kazan) && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
+            else if (hit.collider.TryGetComponent(out Kazan kazan) && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing")) // Kazan
             {
                 Kazan.Instance.Mix();
             }
+            else if (hit.collider.TryGetComponent(out DaySystem openClose)) //OpenClose
+            {
+                if (!openClose.isOpen)
+                {
+                    openClose.OnOpen();
+                }
+                else
+                {
+                    if(openClose.canClose)
+                        openClose.OnClose();
+                }
+            }
+            
         }
     }
 
@@ -214,8 +222,16 @@ public class InteractSystem : MonoBehaviour
         
         currentRoutine = null;
     }
+    
+    private void Drop()
+    {
+        holdObject.transform.SetParent(null);
+        holdObject.transform.rotation = Quaternion.identity;
+        SetPhysicsState(holdObject, true);
+        holdObject.SetPreviewState(false);
+        holdObject = null;
+    }
 
-    //HoldObject Fizikleri
     private void SetPhysicsState(Interactable obj, bool state)
     {
         if (obj.TryGetComponent(out Collider c)) c.enabled = state;

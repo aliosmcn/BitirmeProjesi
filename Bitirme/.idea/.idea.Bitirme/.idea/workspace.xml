@@ -5,7 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/SignOpenClose.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/SignOpenClose.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/yogurt/yogurt.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/yogurt/yogurt.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Circle.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Circle/KurbagaCircle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Circle/KurbagaCircle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Players/KARAKTER.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Players/KARAKTER.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Players/Karga.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Players/Karga.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/PlayerSwitcher.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Systems/PlayerSwitcher.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Events/OrderEvents/onClickGate.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Events/OrderEvents/onClickGate.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Blue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Domates.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Domates.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Green.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Red.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Red.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Orders/OrderSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Orders/OrderSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TillOrCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TillOrCircle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +47,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Crafting/CraftingRecipe.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DeliveryTable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Energy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReverseTime.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Day/DaySO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Events/OrderSOEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Events/VoidEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TillOrCircle.cs" root0="FORCE_HIGHLIGHTING" />
@@ -37,19 +66,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.37f1\Editor\Unity.exe" />
@@ -126,7 +156,9 @@
       <workItem from="1749898895600" duration="8691000" />
       <workItem from="1749933334265" duration="4527000" />
       <workItem from="1750004788106" duration="10385000" />
-      <workItem from="1750162080211" duration="13861000" />
+      <workItem from="1750162080211" duration="13874000" />
+      <workItem from="1750191987890" duration="48000" />
+      <workItem from="1750192045691" duration="11150000" />
     </task>
     <servers />
   </component>

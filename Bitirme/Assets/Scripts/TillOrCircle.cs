@@ -18,7 +18,9 @@ public class TillOrCircle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && heldObject == null)
+        if (!circleName) return;
+        if (heldObject) return;
+        if (other.CompareTag("Player"))
         {
             heldObject = Instantiate(
                 circleName.prefab,
@@ -29,6 +31,7 @@ public class TillOrCircle : MonoBehaviour
             SetUI(true);
             SetRbAndCollider(false);
         }
+        
     }
 
     private void DropObject()

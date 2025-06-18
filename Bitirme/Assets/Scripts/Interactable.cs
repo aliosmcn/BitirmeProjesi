@@ -20,7 +20,7 @@ public class Interactable : MonoBehaviour
 
     private void Awake()
     {
-        if (this.CompareTag("item"))
+        if (CompareTag("item"))
         {
             TryGetComponent(out Outline outl);
             if (outl) outline = outl;

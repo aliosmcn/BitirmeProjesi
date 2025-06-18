@@ -4,6 +4,9 @@ using UnityEngine;
 public class OrderSO : ScriptableObject
 {
     [SerializeField] private GameObject hasta;
+    
+    public GameObject Hasta { get => hasta; set => hasta = value; }
+    
     [SerializeField] private CraftingRecipe orderRecipe;
     public string orderText;
 

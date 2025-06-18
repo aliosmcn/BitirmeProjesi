@@ -35,6 +35,7 @@ public class GameUIController : MonoBehaviour
     [SerializeField] private GameObject kazanBar;
     [SerializeField] private GameObject crowBar;
     [SerializeField] private GameObject bookBar;
+    [SerializeField] private GameObject openCloseBar;
     
     public GameObject crosshair;
 
@@ -77,6 +78,9 @@ public class GameUIController : MonoBehaviour
                     case "Crow":
                         crowBar.SetActive(true);
                         break;
+                    case "OpenClose":
+                        openCloseBar.SetActive(true);
+                        break;
                     default:
                         kazanBar.SetActive(false);
                         bookBar.SetActive(false);
@@ -92,6 +96,7 @@ public class GameUIController : MonoBehaviour
             kazanBar.SetActive(false);
             bookBar.SetActive(false);
             crowBar.SetActive(false);
+            openCloseBar.SetActive(false);
         }
     }
 

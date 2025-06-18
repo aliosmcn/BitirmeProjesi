@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Red
   m_EditorClassIdentifier: 
+  hasta: {fileID: 1683803587224384241, guid: 71c12a3611af41241aa99c73b2719076, type: 3}
   orderRecipe: {fileID: 11400000, guid: 6d45053d3a6ddee49afc91f96aaa063b, type: 2}
   orderText: 

@@ -1,6 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class OrderSystem : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class OrderSystem : MonoBehaviour
     [SerializeField] private VoidEvent onClickGate;
     
     [SerializeField] private List<OrderSO> Orders;
+
+    [SerializeField] private Transform customerPos;
     
     [HideInInspector] 
     public bool canReverseTime = false;
@@ -38,7 +41,7 @@ public class OrderSystem : MonoBehaviour
 
     private int remainingOrders;
     private OrderSO currentOrder;
-    
+    private GameObject newCustomer;
     
     
     private void OnEnable()
@@ -46,7 +49,7 @@ public class OrderSystem : MonoBehaviour
         onDayStarted.AddListener(DayStarted);
         onDayFinished.AddListener(DayFinished);
         
-        onOrderCorrect.AddListener(CorrectOrder);
+       //onOrderCorrect.AddListener(CorrectOrder);
         onOrderFail.AddListener(FailOrder);
         onReverseTime.AddListener(ReverseTime);
         onClickGate.AddListener(StartOrEnd);
@@ -57,10 +60,19 @@ public class OrderSystem : MonoBehaviour
         onDayStarted.RemoveListener(DayStarted);
         onDayFinished.RemoveListener(DayFinished);
         
-        onOrderCorrect.RemoveListener(CorrectOrder);
+        //onOrderCorrect.RemoveListener(CorrectOrder);
         onOrderFail.RemoveListener(FailOrder);
         onReverseTime.RemoveListener(ReverseTime);
         onClickGate.RemoveListener(StartOrEnd);
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            CorrectOrder();
+        }
     }
 
     private void StartOrEnd()
@@ -77,8 +89,7 @@ public class OrderSystem : MonoBehaviour
 
     private void DayStarted()
     {
-        CreateNewOrder();
-        
+        Invoke(nameof(CreateNewOrder), 2f);
     }
 
     private void DayFinished()
@@ -90,16 +101,29 @@ public class OrderSystem : MonoBehaviour
 
     private void CorrectOrder()
     {
+        if(DaySystem.Instance.canClose) return;
+        
+        if (newCustomer.TryGetComponent(out Animator animator))
+        {
+            Debug.Log("dogru siparis");
+            animator.SetTrigger("Correct");
+        }
         currentOrder = null;
         
         //hayat enerjisi artacak
+        onOrderCorrect.Raise();
         
-        CreateNewOrder();
+        if (DaySystem.Instance.canClose == false)
+            Invoke(nameof(CreateNewOrder), 2f);
     }
 
     private void FailOrder()
     {
-        //musteri bayilma animasyonu.
+        if (newCustomer.TryGetComponent(out Animator animator))
+        {
+            animator.SetTrigger("Fail");
+        }
+        
         //hayat enerjisi azalacak
         
         canReverseTime = true;
@@ -109,14 +133,18 @@ public class OrderSystem : MonoBehaviour
     private void CreateNewOrder()
     {
         if (currentOrder) return;
-        
+        if(newCustomer) Destroy(newCustomer);
         currentOrder = Orders[Random.Range(0, Orders.Count)];
-        Instantiate(currentOrder, transform.position, Quaternion.identity);
-        //musteri ui aktif olsun
+        newCustomer = Instantiate(currentOrder.Hasta, customerPos.position, customerPos.rotation);
+        //musteri ui aktif olsuns
     }
     
     private void ReverseTime()
     {
+        if (newCustomer.TryGetComponent(out Animator animator))
+        {
+            animator.SetTrigger("Revive");
+        }
         
         canReverseTime = false;
     }
