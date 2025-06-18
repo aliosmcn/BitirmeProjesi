@@ -1,24 +1,32 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Energy : MonoBehaviour
 {
-    #region Singleton
-    private static Energy instance;
+    [Header("Events")]
+    [SerializeField] private IntEvent onEnergyChanged;
 
-    public static Energy Instance
+    [Header("UI")] 
+    [SerializeField] private GameObject energyUI;
+    [SerializeField] private Image energy;
+    
+    [SerializeField] private float energyValue = 100;
+
+    private void OnEnable()
     {
-        get
-        {
-            return instance;
-        }
+        onEnergyChanged.AddListener(UpdateEnergyBar);
     }
 
-    private void Awake()
+    private void OnDisable()
     {
-        instance = this;
+        onEnergyChanged.RemoveListener(UpdateEnergyBar);
     }
 
-    #endregion Singleton
-    
-    
+    private void UpdateEnergyBar(int value)
+    {
+        energyValue += value;
+        energy.fillAmount = energyValue / 100;
+    }
 }
