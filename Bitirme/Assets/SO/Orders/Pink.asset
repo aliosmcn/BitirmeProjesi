@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Pink
   m_EditorClassIdentifier: 
-  hasta: {fileID: 1683803587224384241, guid: 71c12a3611af41241aa99c73b2719076, type: 3}
+  hasta: {fileID: 5549913106728727772, guid: 36a538cf6196a82409d9b8d5bda101e0, type: 3}
   orderRecipe: {fileID: 11400000, guid: 879b34e5bf6cacd499054b86f0d59f67, type: 2}
   orderText: 
