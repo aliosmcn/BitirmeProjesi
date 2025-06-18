@@ -112,7 +112,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.33
   m_SlopeLimit: 45
-  m_StepOffset: 0.01
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.03, z: -0.18}
@@ -155,7 +155,7 @@ MonoBehaviour:
   onLookingItem: {fileID: 11400000, guid: 0bde805f88392a84dbb22d432b94ecb3, type: 2}
   onClickGate: {fileID: 0}
   onDayFinished: {fileID: 0}
-  rayDistance: 2.2
+  rayDistance: 2.6
   holdPoint: {fileID: 4258950822231318976}
   moveTime: 0.2
   interactableLayer:

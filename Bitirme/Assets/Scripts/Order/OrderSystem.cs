@@ -40,7 +40,7 @@ public class OrderSystem : MonoBehaviour
     public bool isDayStarted = false;
 
     private int remainingOrders;
-    private OrderSO currentOrder;
+    public OrderSO currentOrder;
     private GameObject newCustomer;
     
     
@@ -121,6 +121,7 @@ public class OrderSystem : MonoBehaviour
         onOrderFail.Raise();
         //hayat enerjisi azalacak
         
+        DaySystem.Instance.canDeliver = false;
         canReverseTime = true;
     }
 
@@ -150,7 +151,8 @@ public class OrderSystem : MonoBehaviour
         {
             animator.SetTrigger("Revive");
         }
-        
+
+        DaySystem.Instance.canDeliver = true;
         canReverseTime = false;
     }
     

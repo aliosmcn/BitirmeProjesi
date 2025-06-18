@@ -31,6 +31,7 @@ public class DaySystem : MonoBehaviour
     [SerializeField] private VoidEvent onOrderCorrect;
 
     [HideInInspector] public bool isOpen = false;
+    [HideInInspector] public bool canDeliver = true;
     [HideInInspector] public bool canClose = false;
     
     public int correctCount = 0;
@@ -60,7 +61,6 @@ public class DaySystem : MonoBehaviour
     
     public void OnOpen()
     {
-        Debug.Log("Acildi");
         animator.SetTrigger("Open");
         isOpen = true;
         canClose = false;
@@ -69,7 +69,6 @@ public class DaySystem : MonoBehaviour
 
     public void OnClose()
     {
-        Debug.Log("Kapandi");
         if(!canClose) return;
         animator.SetTrigger("Close");
         correctCount = 0;

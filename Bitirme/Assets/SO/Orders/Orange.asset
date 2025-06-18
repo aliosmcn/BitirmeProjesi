@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
-  hasta: {fileID: 1683803587224384241, guid: 71c12a3611af41241aa99c73b2719076, type: 3}
+  hasta: {fileID: 2909983128665162681, guid: 02ae2583e8e47a548841ae18835b5b90, type: 3}
   orderRecipe: {fileID: 11400000, guid: 67230e0876b1d4143842588cf1268833, type: 2}
   orderText: 

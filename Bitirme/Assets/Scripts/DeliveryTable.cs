@@ -32,6 +32,7 @@ public class DeliveryTable : MonoBehaviour
     public void SetDeliveryObject(Interactable obj)
     {
         deliverObject = obj;
+        deliverObject.gameObject.tag = "Untagged";
         OrderSystem.Instance.CheckOrder(deliverObject);
         StartCoroutine(DestroyDeliver());
     }

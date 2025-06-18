@@ -6,41 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/CloseToOpen.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/CloseToOpen.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/M_SignOpenClose_D.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/M_SignOpenClose_D.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/OpenClose.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/OpenClose.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/OpenToClose.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/OpenToClose.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/SignOpenClose.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/SignOpenClose.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/SignOpenClose.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/SignOpenClose/SignOpenClose.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/1Close.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/1Close.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/Book.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/Book.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Systems/OrderSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Systems/OrderSystem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tarif/Book.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tarif/Book.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Potions/Kirmizi.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Potions/Kirmizi.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Potions/Mavi.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Potions/Mavi.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Potions/Mor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Potions/Mor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Potions/Pembe.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Potions/Pembe.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Potions/Turuncu.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Potions/Turuncu.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Item/Potions/Yesil.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Item/Potions/Yesil.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Green.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman/BayilmaW.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hastalar/SickWoman/BayilmaW.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman1/SickWoman1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman1/SickWoman1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman2/SickWoman2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman2/SickWoman2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman3/SickWoman3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Hastalar/SickWoman3/SickWoman3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Red 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Red 2.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelDesign.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Book.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DaySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DaySystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/DeliveryTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DeliveryTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InteractSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Interactable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReverseTime.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ReverseTime.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ItemSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/ItemSO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Prefab/KazanUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/Prefab/KazanUI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +34,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Intro/IntroController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/CrowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Character/InputSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -59,7 +43,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Energy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ReverseTime.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Day/DaySO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Events/OrderSOEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScriptableObjects/Events/VoidEvent.cs" root0="FORCE_HIGHLIGHTING" />

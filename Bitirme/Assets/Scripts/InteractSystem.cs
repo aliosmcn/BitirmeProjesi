@@ -97,10 +97,10 @@ public class InteractSystem : MonoBehaviour
             //birakacak yer var
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, rayDistance))
             {
-                if (hit.collider.TryGetComponent(out DeliveryTable table))
+                if (hit.collider.TryGetComponent(out DeliveryTable table) && DaySystem.Instance.isOpen && holdObject.itemData.isPotion && DaySystem.Instance.canDeliver)
                 {
+                    if (!table.deliverObject) currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, table.orderPos.position, false));
                     DeliveryTable.Instance.SetDeliveryObject(holdObject);
-                    if (holdObject.itemData.isPotion && !table.deliverObject) currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, table.orderPos.position, false));
                     return;
                 }
                 if (hit.collider.TryGetComponent(out Kazan kazan) && kazan.alabiliyorMu && Kepce.Instance.TryGetComponent(out Animator animator) && !animator.GetBool("Mixing"))
@@ -116,6 +116,9 @@ public class InteractSystem : MonoBehaviour
                     Drop();
                     return;
                 }
+
+                if (hit.collider.gameObject.CompareTag("Table"))
+                    return;
                 currentRoutine = StartCoroutine(MoveObjectRoutine(holdObject, hit.point, false)); //PLACE
             }
             else
