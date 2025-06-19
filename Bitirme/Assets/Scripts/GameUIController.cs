@@ -60,6 +60,7 @@ public class GameUIController : MonoBehaviour
 
     private void Start()
     {
+        this.enabled = true;
         interactiveBar.SetActive(false);
         orderTextBar.SetActive(false);
     }
