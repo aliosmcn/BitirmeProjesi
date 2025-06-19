@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasta: {fileID: 5549913106728727772, guid: 36a538cf6196a82409d9b8d5bda101e0, type: 3}
   orderRecipe: {fileID: 11400000, guid: 6d45053d3a6ddee49afc91f96aaa063b, type: 2}
-  orderText: 
+  orderText: "I haven\u2019t been able to go to the toilet for 3 days. My stomach
+    hurts a lot. I\u2019ve seen every sorcerer I could find. I don\u2019t believe
+    you can heal me either, but I wanted to try anyway."

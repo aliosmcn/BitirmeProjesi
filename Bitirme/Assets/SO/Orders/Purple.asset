@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Purple
   m_EditorClassIdentifier: 
-  hasta: {fileID: 6991492983930598630, guid: 3b9d88e75ddc8e741bb23d34ecc90470, type: 3}
+  hasta: {fileID: 2909983128665162681, guid: 02ae2583e8e47a548841ae18835b5b90, type: 3}
   orderRecipe: {fileID: 11400000, guid: 3f36a336e54baa94db7166f81806080f, type: 2}
-  orderText: 
+  orderText: "Everyone at home is itching. The sorcerer said a boy is near. I did
+    bathe after my wife got pregnant, but the itching didn\u2019t stop. I don\u2019t
+    have big ambitions. A healthy baby is enough. Save me from this itching. My whole
+    body is wounded."

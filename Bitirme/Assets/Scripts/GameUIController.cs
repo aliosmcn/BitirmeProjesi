@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -38,6 +39,10 @@ public class GameUIController : MonoBehaviour
     [SerializeField] private GameObject openCloseBar;
     [SerializeField] private GameObject reverseBar;
     [SerializeField] private GameObject deliverBar;
+    [SerializeField] private GameObject orderTextBar;
+    [SerializeField] private Text orderText;
+
+    [SerializeField] private GameObject pausePanel;
     
     public GameObject crosshair;
 
@@ -55,8 +60,40 @@ public class GameUIController : MonoBehaviour
     private void Start()
     {
         interactiveBar.SetActive(false);
+        orderTextBar.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (!Input.GetKeyDown(KeyCode.Escape)) return;
+        if(orderTextBar.activeSelf)
+        {   
+            orderTextBar.SetActive(false); 
+            return;
+        }
+
+        if (!pausePanel.activeSelf)
+        {
+            pausePanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            return;
+        }
+        if (pausePanel.activeSelf) pausePanel.SetActive(false);
+        {
+            pausePanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            return;
+        }
+    }
+
+    public void SetOrderText(OrderSO order, bool state)
+    {
+        if(order) orderText.text = order.orderText;
+        orderTextBar.SetActive(state);
+    }
+    
     public void GetInteractive(ItemSO item)
     {
         if (item)
@@ -126,5 +163,17 @@ public class GameUIController : MonoBehaviour
             interactiveBar.SetActive(false);
         }
         
+    }
+
+    public void MainMenuButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void ContinueButton()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        pausePanel.SetActive(false);
     }
 }

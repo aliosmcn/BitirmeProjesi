@@ -10,6 +10,7 @@ public class Energy : MonoBehaviour
 
     [Header("UI")] 
     [SerializeField] private GameObject energyUI;
+    [SerializeField] private GameObject loseUI;
     [SerializeField] private Image energy;
     
     [SerializeField] private float energyValue = 100;
@@ -24,9 +25,21 @@ public class Energy : MonoBehaviour
         onEnergyChanged.RemoveListener(UpdateEnergyBar);
     }
 
+    private void Start()
+    {
+        loseUI.SetActive(false);
+    }
+
     private void UpdateEnergyBar(int value)
     {
         energyValue += value;
+        if (energyValue >= 100) energyValue = 100;
         energy.fillAmount = energyValue / 100;
+        if (energyValue <= 0f)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            loseUI.SetActive(true);
+        }
     }
 }

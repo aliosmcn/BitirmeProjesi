@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Blue
   m_EditorClassIdentifier: 
-  hasta: {fileID: 1683803587224384241, guid: 71c12a3611af41241aa99c73b2719076, type: 3}
+  hasta: {fileID: 5549913106728727772, guid: 36a538cf6196a82409d9b8d5bda101e0, type: 3}
   orderRecipe: {fileID: 11400000, guid: 79d7c20ba0176a64ab4dd2fa05c89e89, type: 2}
-  orderText: 
+  orderText: "For a few days now, a spot on my arm has been hurting. As the days
+    passed, my skin started turning green. I\u2019m sure my mother-in-law put a curse
+    on me! I\u2019m turning into a frog! Please, I just want to stay human! Help
+    me. They spoke very highly of you."

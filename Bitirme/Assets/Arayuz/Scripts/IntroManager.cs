@@ -7,7 +7,7 @@ public class IntroManager : MonoBehaviour {
     public VideoPlayer videoPlayer;
     public string nextSceneName;
 
-    void Start() {
+    void Awake() {
         videoPlayer.loopPointReached += OnVideoEnd;
     }
 

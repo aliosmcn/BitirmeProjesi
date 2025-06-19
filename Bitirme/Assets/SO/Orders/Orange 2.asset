@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Orange 2
   m_EditorClassIdentifier: 
-  hasta: {fileID: 8713042692004092614, guid: 183d3e65166755c4697320b61d157fd5, type: 3}
+  hasta: {fileID: 5549913106728727772, guid: 36a538cf6196a82409d9b8d5bda101e0, type: 3}
   orderRecipe: {fileID: 11400000, guid: 67230e0876b1d4143842588cf1268833, type: 2}
-  orderText: 
+  orderText: 'While I was cleaning the house, the bookshelf fell and trapped my hand
+    underneath. It hurt a lot at first, and by the time I got my hand out, it had
+    already started to go numb. It''s getting more and more bruised. I feel really
+    awful. '

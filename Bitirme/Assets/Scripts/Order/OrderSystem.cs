@@ -96,7 +96,7 @@ public class OrderSystem : MonoBehaviour
 
     private void CorrectOrder()
     {
-        onEnergyChanged.Raise(25);
+        onEnergyChanged.Raise(20);
         if(DaySystem.Instance.canClose) return;
         
         if (newCustomer.TryGetComponent(out Animator animator))
@@ -106,7 +106,7 @@ public class OrderSystem : MonoBehaviour
         }
         currentOrder = null;
         
-        //hayat enerjisi artacak
+        GameUIController.Instance.SetOrderText(currentOrder, false);
         onOrderCorrect.Raise();
         
         if (DaySystem.Instance.canClose == false)
@@ -115,14 +115,13 @@ public class OrderSystem : MonoBehaviour
 
     private void FailOrder()
     {
-        onEnergyChanged.Raise(-10);
         if (newCustomer.TryGetComponent(out Animator animator))
         {
             animator.SetTrigger("Fail");
         }
         
         onOrderFail.Raise();
-        //hayat enerjisi azalacak
+        onEnergyChanged.Raise(-15);
         
         DaySystem.Instance.canDeliver = false;
         canReverseTime = true;
@@ -144,7 +143,7 @@ public class OrderSystem : MonoBehaviour
         if(newCustomer) Destroy(newCustomer);
         currentOrder = Orders[Random.Range(0, Orders.Count)];
         newCustomer = Instantiate(currentOrder.Hasta, customerPos.position, customerPos.rotation);
-        //musteri ui aktif olsuns
+        GameUIController.Instance.SetOrderText(currentOrder, true);
     }
     
     public void ReverseTime()

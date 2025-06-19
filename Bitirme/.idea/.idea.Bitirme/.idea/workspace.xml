@@ -6,10 +6,47 @@
   <component name="ChangeListManager">
     <list default="true" id="7ea2e025-a24d-4479-bb9a-070031ca7382" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bitirme/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Arayuz/Scripts/MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arayuz/Scripts/MenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/OrangePotion.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/OrangePotion.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/Landscape.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/Landscape.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/TreeLeaves.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/TreeLeaves.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/TreeTrunk.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/TreeTrunk.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/rock.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/Materials/rock.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arayuz/Scripts/IntroManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arayuz/Scripts/IntroManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Arayuz/Scripts/LoadingScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Arayuz/Scripts/LoadingScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kurbağa/Kurbaga.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kurbağa/Kurbaga.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kuş tüyü/KusTüyü.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/kuş tüyü/KusTüyü.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar1/Mantar1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar1/Mantar1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar2/Mantar2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar2/Mantar2.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar3/Mantar3.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/mantar3/Mantar3.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/papatya/Papatya.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/papatya/Papatya.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/yaban mersini/YabanMersini.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/yaban mersini/YabanMersini.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/yarasa kanadı/YarasaKanadi.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Aysenur/model/yarasa kanadı/YarasaKanadi.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/yogurtkase/yogurtkase.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Didem/modeller/yogurtkase/yogurtkase.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/Book.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/Book.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Book/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/BluePotion.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/BluePotion.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/GreenPotion.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/GreenPotion.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/PinkPotion.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/PinkPotion.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/PurplePotion.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/PurplePotion.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/RedPotion.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DenemeModel/Merve/Potions/PotionModels/RedPotion.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Blue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Green.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Orange.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Pink.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Purple 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Purple 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Purple.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Red 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Red 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SO/Orders/Red.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SO/Orders/Red.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoadingScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoadingScreen.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NewLevelDesign.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NewLevelDesign.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SonLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SonLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DaySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DaySystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Energy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Energy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameUIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Order/OrderSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +184,7 @@
       <workItem from="1750192045691" duration="11397000" />
       <workItem from="1750238435816" duration="881000" />
       <workItem from="1750277453018" duration="671000" />
+      <workItem from="1750291200922" duration="5678000" />
     </task>
     <servers />
   </component>

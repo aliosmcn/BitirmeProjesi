@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Pink
   m_EditorClassIdentifier: 
-  hasta: {fileID: 6861333848835808378, guid: 4f43fa88640aeb34ea0316c4e4dcea12, type: 3}
+  hasta: {fileID: 8713042692004092614, guid: 183d3e65166755c4697320b61d157fd5, type: 3}
   orderRecipe: {fileID: 11400000, guid: 879b34e5bf6cacd499054b86f0d59f67, type: 2}
-  orderText: 
+  orderText: Witch! Help me quickly! A whole pot of boiling water spilled on me.
+    I was trying to boil chickens, but I ended up boiling myself. Hurry up!

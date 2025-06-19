@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DaySystem : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class DaySystem : MonoBehaviour
     }
 
     #endregion Singleton
+
+    [SerializeField] private Text remainingCustomerPanel;
     
     public DaySO[] days;
     public DaySO currentDay;
@@ -40,6 +43,7 @@ public class DaySystem : MonoBehaviour
 
     private void Start()
     {
+        remainingCustomerPanel.gameObject.SetActive(false);
         UpdateDay();
     }
 
@@ -62,6 +66,8 @@ public class DaySystem : MonoBehaviour
     public void OnOpen()
     {
         animator.SetTrigger("Open");
+        remainingCustomerPanel.text = "Remanining Customer: " + (currentDay.CustomerCount - correctCount);
+        remainingCustomerPanel.gameObject.SetActive(true);
         isOpen = true;
         canClose = false;
         onDayStarted.Raise();
@@ -71,6 +77,7 @@ public class DaySystem : MonoBehaviour
     {
         if(!canClose) return;
         animator.SetTrigger("Close");
+        remainingCustomerPanel.gameObject.SetActive(false);
         correctCount = 0;
         isOpen = false;
         UpdateDay();
@@ -80,7 +87,12 @@ public class DaySystem : MonoBehaviour
     private void UpdateCanClose()
     {
         correctCount++;
-        if(correctCount == currentDay.CustomerCount)
+        remainingCustomerPanel.text = "Remanining Customer: " + (currentDay.CustomerCount - correctCount);
+        if (correctCount == currentDay.CustomerCount)
+        {
+            remainingCustomerPanel.text = "Remanining Customer: " + (currentDay.CustomerCount - correctCount) + " (Close the Shop)"; 
             canClose = true;
+        }
+            
     }
 }

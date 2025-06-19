@@ -18,22 +18,35 @@ public class LoadingScreen : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    
         instance = this;
+        //DontDestroyOnLoad(gameObject);  
     }
 
     #endregion Singleton
     
     [Header("Settings")]
     public Slider progressBar;
-    public float minLoadTime = 2f;       // Minimum gösterim süresi (saniye)
-    public float progressAccel = 0.9f;   // Progress hız çarpanı (0.1 = yavaş, 1 = hızlı)
+    public float minLoadTime = 2f;      
+    public float progressAccel = 0.9f;   
     public string nextSceneName;
 
-    void Start() => StartCoroutine(LoadScene());
-
-    IEnumerator LoadScene()
+    void Start()
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneName);
+        if (SceneManager.GetActiveScene().name == "LoadingScreen")
+        {
+            StartCoroutine(LoadScene(nextSceneName));
+        }
+    } 
+
+    IEnumerator LoadScene(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         asyncLoad.allowSceneActivation = false;
         
         float timer = 0f;
@@ -43,7 +56,6 @@ public class LoadingScreen : MonoBehaviour
         {
             timer += Time.deltaTime;
             
-            // Gerçek ve yapay progress karışımı
             float realProgress = asyncLoad.progress / 0.9f;
             progress = Mathf.Lerp(progress, realProgress, progressAccel * Time.deltaTime);
             

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbd46e7f36a2a64ba1d7c01c824ea57, type: 3}
   m_Name: Red 2
   m_EditorClassIdentifier: 
-  hasta: {fileID: 6861333848835808378, guid: 4f43fa88640aeb34ea0316c4e4dcea12, type: 3}
+  hasta: {fileID: 5549913106728727772, guid: 36a538cf6196a82409d9b8d5bda101e0, type: 3}
   orderRecipe: {fileID: 11400000, guid: 6d45053d3a6ddee49afc91f96aaa063b, type: 2}
-  orderText: 
+  orderText: "Healer! Hurry, I\u2019m about to give birth! My belly is about to split
+    in half. I\u2019ve been writhing in bed for days. I never expected to deliver
+    this quickly!"

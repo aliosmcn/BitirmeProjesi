@@ -662,7 +662,7 @@ MonoBehaviour:
   progressBar: {fileID: 104802759}
   minLoadTime: 2
   progressAccel: 1
-  nextSceneName: NewLevelDesign
+  nextSceneName: SonLevel
 --- !u!1 &1244921108
 GameObject:
   m_ObjectHideFlags: 0

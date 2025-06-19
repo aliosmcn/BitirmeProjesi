@@ -14,4 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasta: {fileID: 5549913106728727772, guid: 36a538cf6196a82409d9b8d5bda101e0, type: 3}
   orderRecipe: {fileID: 11400000, guid: 229c4b6d5f1a070438658d5bfd842bd8, type: 2}
-  orderText: 
+  orderText: "I\u2019ve been freezing for days. I keep shivering, but my husband
+    says my body is burning hot. I didn\u2019t believe him, but this morning my son
+    told me I should see the healer. So, I rushed here. Can you prepare one of your
+    healing teas for me?"
