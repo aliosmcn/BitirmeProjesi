@@ -1,5 +1,4 @@
 using UnityEngine;
-// ReSharper disable InconsistentNaming
 
 [CreateAssetMenu]
 public class DaySO : ScriptableObject

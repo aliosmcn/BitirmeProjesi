@@ -54,6 +54,7 @@ public class CrowController : MonoBehaviour
     private float targetPitchAngle = 0f;
     private float targetVerticalSpeed = 0f;
 
+    private bool canPlaySFX = true;
     private void OnEnable()
     {
         onSwitchCrow.AddListener(OnSwitch);
@@ -76,14 +77,12 @@ public class CrowController : MonoBehaviour
 
     void Update()
     {
-        // Çarpışma sonrası W tuşu ile yeniden hareket
         if (isCollided && Input.GetKeyDown(KeyCode.Space))
         {
             onLookingItem.Raise(null);
             ResetAfterCollision();
         }
 
-        // Başlangıç hareketi
         if (!isFlying && Input.GetKeyDown(KeyCode.Space))
         {
             onLookingItem.Raise(null);
@@ -97,8 +96,13 @@ public class CrowController : MonoBehaviour
             HandleVertical();
             UpdateModelRotation();
             
-            // Yüksekliğe göre animasyon kontrolü
             UpdateFlightAnimation();
+        }
+
+        if (canPlaySFX && animator.GetBool("Up"))
+        {
+            AudioManager.Instance.PlaySFX("Kanat", gameObject);
+            canPlaySFX = false;
         }
     }
 
@@ -122,20 +126,21 @@ public class CrowController : MonoBehaviour
 
     void UpdateFlightAnimation()
     {
-        // Yüksekliğe göre animasyon kontrolü
         float verticalVelocity = rb.linearVelocity.y;
         
-        if (verticalVelocity < -0.2f) // Belirgin şekilde aşağı iniyorsa
+        if (verticalVelocity < -0.2f) 
         {
             animator.SetBool("Down", true);
             animator.SetBool("Up", false);
+            AudioManager.Instance.StopSFX("Kanat", gameObject);
+            canPlaySFX = true;
         }
-        else if (verticalVelocity > 0.2f) // Belirgin şekilde yukarı çıkıyorsa
+        else if (verticalVelocity > 0.2f) 
         {
             animator.SetBool("Up", true);
             animator.SetBool("Down", false);
         }
-        else // Düz uçuş veya minimal hareket
+        else 
         {
             animator.SetBool("Up", false);
             animator.SetBool("Down", false);

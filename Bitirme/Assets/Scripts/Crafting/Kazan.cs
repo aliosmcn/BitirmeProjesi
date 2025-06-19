@@ -40,6 +40,8 @@ public class Kazan : MonoBehaviour
     {
         EventManager.OnMixed += CreateRecipe;
         EventManager.OnMixing += Mix;
+
+        AudioManager.Instance.PlaySFX("Kaynama", gameObject);
     }
 
     private void OnDisable()
@@ -87,6 +89,7 @@ public class Kazan : MonoBehaviour
     
         Kepce.Instance.gameObject.TryGetComponent(out Animator animator);
         animator.SetBool("Mixing", true); 
+        AudioManager.Instance.PlaySFX("Karistirma", gameObject);
     }
     
     public void CreateRecipe()
@@ -128,7 +131,6 @@ public class Kazan : MonoBehaviour
 
         obj.transform.position = targetPos;
 
-        // Döndürme animasyonu
         float rotateDuration = 0.5f;
         float rotateElapsed = 0f;
         Quaternion startRot = obj.transform.rotation;

@@ -169,6 +169,7 @@ public class InteractSystem : MonoBehaviour
             else if (hit.collider.CompareTag("Kure"))
             {
                 OrderSystem.Instance.ReverseTime();
+                AudioManager.Instance.PlaySFX("geriAl", gameObject);
             }
             
         }

@@ -35,16 +35,23 @@ public class Book : MonoBehaviour
     public void NextPage()
     {
         if (canNext)
+        {
+            AudioManager.Instance.PlaySFX("Sayfa", gameObject);
             animator.SetTrigger("Sonraki");
+        }
+            
     }
 
     public void PreviousPage()
     {
         if (canPrevious)
+        {
+            AudioManager.Instance.PlaySFX("Sayfa", gameObject);
             animator.SetTrigger("Onceki");
+        }
+            
     }
 
-    //AnimationEvents
     public void SetCanNext()
     {
         canNext = !canNext;

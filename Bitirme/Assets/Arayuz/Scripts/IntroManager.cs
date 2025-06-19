@@ -14,7 +14,11 @@ public class IntroManager : MonoBehaviour {
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             OnVideoEnd(videoPlayer);
+            AudioManager.Instance.PlaySFX("Button", gameObject);
+        }
+            
     }
 
     void OnVideoEnd(VideoPlayer vp) {

@@ -119,9 +119,9 @@ public class OrderSystem : MonoBehaviour
         {
             animator.SetTrigger("Fail");
         }
-        
+        AudioManager.Instance.PlaySFX("Bayilma", gameObject);
         onOrderFail.Raise();
-        onEnergyChanged.Raise(-15);
+        onEnergyChanged.Raise(-30);
         
         DaySystem.Instance.canDeliver = false;
         canReverseTime = true;

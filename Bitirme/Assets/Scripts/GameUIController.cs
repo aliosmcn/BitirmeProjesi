@@ -20,6 +20,7 @@ public class GameUIController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        AudioManager.Instance.PlayMusic("GameMusic");
     }
 
     #endregion Singleton
@@ -69,19 +70,22 @@ public class GameUIController : MonoBehaviour
         if(orderTextBar.activeSelf)
         {   
             orderTextBar.SetActive(false); 
+            AudioManager.Instance.PlaySFX("Button", gameObject);
             return;
         }
 
         if (!pausePanel.activeSelf)
         {
+            AudioManager.Instance.PlaySFX("Button", gameObject);
             pausePanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             return;
         }
-        if (pausePanel.activeSelf) pausePanel.SetActive(false);
+        if (pausePanel.activeSelf) 
         {
-            pausePanel.SetActive(true);
+            AudioManager.Instance.PlaySFX("Button", gameObject);
+            pausePanel.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             return;
@@ -167,11 +171,13 @@ public class GameUIController : MonoBehaviour
 
     public void MainMenuButton()
     {
+        AudioManager.Instance.PlaySFX("Button", gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 
     public void ContinueButton()
     {
+        AudioManager.Instance.PlaySFX("Button", gameObject);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         pausePanel.SetActive(false);

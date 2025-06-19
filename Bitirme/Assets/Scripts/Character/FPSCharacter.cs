@@ -41,7 +41,6 @@ public class FPSCharacter : MonoBehaviour
         {
             controller.Move(walkSpeed * Time.deltaTime * move);
         }
-        
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);

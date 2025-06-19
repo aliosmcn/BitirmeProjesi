@@ -28,24 +28,21 @@ public class Switcher : MonoBehaviour
         isPlayerActive = true;
         playerCam.SetActive(true);
         crow.SetActive(false);
+        AudioManager.Instance.PlaySFX("Switcher", gameObject);
     }
 
     void Update()
     {
-        // Check if Tab key is pressed
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            // Check distance between the switcher object and characters
             float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
             float distanceToCrow = Vector3.Distance(transform.position, crow.transform.position);
 
-            // If player is active and within range, switch to crow
             if (isPlayerActive && distanceToPlayer <= switchDistance)
             {
                 SwitchToCrow();
                 onSwitchCrow.Raise();
             }
-            // If crow is active and within range, switch to player
             else if (!isPlayerActive && distanceToCrow <= switchDistance)
             {
                 SwitchToPlayer();
